@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../Shared/Navbar';
 
 const RootLayout = () => {
     return (
         <div>
-            hello
+            <Navbar></Navbar>
         </div>
     );
 };

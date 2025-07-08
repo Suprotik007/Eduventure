@@ -6,7 +6,15 @@ const router = createBrowserRouter([
 
     {
         path: '/',
-        Component:RootLayout
+        Component:RootLayout,
+        children:[{
+            index:true
+            
+        },
+    {
+        path:'/allClass',
+        // Component:AllClass
+    }]
     }
 
 ])
