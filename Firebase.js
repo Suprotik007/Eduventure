@@ -6,13 +6,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDmE6I36MsKib7aEAGdTSoYKTKroqmSlaM",
-  authDomain: "eduventure-fcb06.firebaseapp.com",
-  projectId: "eduventure-fcb06",
-  storageBucket: "eduventure-fcb06.firebasestorage.app",
-  messagingSenderId: "419436090581",
-  appId: "1:419436090581:web:1aadf8531913be922ebe5c"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);

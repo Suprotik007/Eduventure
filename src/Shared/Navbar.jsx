@@ -49,7 +49,7 @@ const Navbar = () => {
         </NavLink>
 
          <NavLink
-          to="/explore"
+          to="/allClass"
           className={({ isActive }) =>
             isActive ? ' border-b-2 ' : ''
           }
@@ -121,21 +121,23 @@ const Navbar = () => {
                   {user.displayName || 'User'}
                 </div>
 
-                  <NavLink
+              <div className='px-4 py-2 border-b border-gray-100  text-amber-300 font-semibold'>
+                    <NavLink
         to="/dashBoard"
-        className={({ isActive }) =>
-          isActive ? 'text-teal-600 border-b-2 border-teal-700' : ''
-        }
+        
       >
         Dashboard
       </NavLink>
+              </div>
 
-                <button
+          <div>
+                  <button
                   onClick={handleLogOut}
-                  className="w-full text-left px-4 py-2 hover:bg-white text-red-400 font-semibold"
+                  className="w-full text-left px-4 py-2  text-red-400 font-semibold"
                 >
                   Log Out
                 </button>
+          </div>
               </div>
             )}
             
