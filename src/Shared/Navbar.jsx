@@ -81,7 +81,7 @@ const Navbar = () => {
   )
 
   return (
-   <div className=' top-0 left-0 bottom-0 right-0 z-50   '>
+   <div>
 
      <div className="navbar rounded-tl-4xl rounded-br-4xl p-5 bg-black text-white border-b-2   border-black px-5 mt-2 w-11/12 mx-auto ">
       <div className="navbar-start">
@@ -95,7 +95,7 @@ const Navbar = () => {
           {links}
        </ul> 
      </div>
-     <a className=" text-xl font-bold  ">Eduventure</a>
+     <a className=" text-xl font-bold  ">Edventure</a>
    </div>
    <div className="navbar-center hidden lg:flex">
      <ul className="menu menu-horizontal px-1 ">

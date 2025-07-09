@@ -3,7 +3,7 @@ import PartnersSlider from '../Elements/PartnerDetails';
 
 const Partners = () => {
     return (
-        <div>
+        <div >
             <h1 className='text-4xl font-semibold text-center '>Our Partners</h1>
             <div>
                 <PartnersSlider></PartnersSlider>

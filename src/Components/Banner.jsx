@@ -14,7 +14,7 @@ import { Link } from 'react-router';
 
 const Banner = () => {
   return (
-    <div className=" text-center justify-around p-3 w-11/12 mx-auto">
+    <div className=" text-center justify-around p-3">
  <Swiper
         spaceBetween={30}
         centeredSlides={true}
