@@ -83,7 +83,7 @@ const Navbar = () => {
   return (
    <div>
 
-     <div className="navbar rounded-tl-4xl rounded-br-4xl p-5 bg-black text-white border-b-2   border-black px-5 mt-2 w-11/12 mx-auto ">
+     <div className="navbar rounded-bl-4xl rounded-br-4xl p-5 bg-black text-white border-b-2   border-black px-5 mt-2 w-11/12 mx-auto ">
       <div className="navbar-start">
    <div className="dropdown   ">
     <div tabIndex={0} role="button" className="btn btn-ghost  text-teal-500 lg:hidden">
@@ -95,7 +95,7 @@ const Navbar = () => {
           {links}
        </ul> 
      </div>
-     <a className=" text-xl font-bold  ">Edventure</a>
+     <a className=" text-xl font-bold logo-font ">Edventure</a>
    </div>
    <div className="navbar-center hidden lg:flex">
      <ul className="menu menu-horizontal px-1 ">
