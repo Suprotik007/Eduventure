@@ -2,9 +2,9 @@ import React from 'react';
 
 const EventCard = ({event}) => {
      return (
-    <div className="card py-5 bg-black text-white border-1 shadow-sm">
+    <div className="card py-5 bg-black h-130 text-white border-1 shadow-sm">
   <figure>
-    <img className='border-1'
+    <img className='border-1 rounded-lg'
       src={event.image}
       alt="Books" />
   </figure>

@@ -19,10 +19,10 @@ const AllClassCard = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-      {classes.map(cls => (
-         <div className="card bg-black text-white py-5 m border-1 shadow-sm">
+      {classes.map(cls => ( 
+         <div key={cls._id}  className="card bg-black text-white py-5 m border-1 shadow-sm">
   <figure>
-    <img className='border-1'
+    <img className='border-1 rounded-lg'
       src={cls.image}
       alt="Books" />
   </figure>
@@ -40,8 +40,8 @@ const AllClassCard = () => {
      
     </div>
      <div>
-         <Link to='/classDtl'>
-         <button className='btn btn-primary btn-wide'>Enroll</button></Link>
+         <Link to={`/classDtl/${cls._id}`}>
+         <button className='btn btn-primary btn-block'>Enroll</button></Link>
      </div>
   </div>
 </div>

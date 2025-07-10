@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import EventCard from '../Elements/EventCard';
+import EventSlider from '../Elements/EventSlider';
 
 const Events = () => {
 
@@ -16,9 +17,9 @@ const Events = () => {
 
 <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  '>
 
- {
-                events.map(event=>(<EventCard key={event.id} event={event}></EventCard>))
-             }
+
+             <EventSlider event={events}></EventSlider>
+
 </div>
             
         </div>

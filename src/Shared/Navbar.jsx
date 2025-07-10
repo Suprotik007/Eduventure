@@ -67,16 +67,7 @@ const Navbar = () => {
         </NavLink>
         
       
-    {user && (
-      <NavLink
-        to="/dashBoard"
-        className={({ isActive }) =>
-          isActive ? 'text-teal-600 border-b-2 border-teal-700' : ''
-        }
-      >
-        Dashboard
-      </NavLink>
-    )}
+  
       </div>
   )
 

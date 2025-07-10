@@ -2,9 +2,9 @@ import React from 'react';
 
 const BooksCard = ({book}) => {
   return (
-    <div className="card bg-black text-white py-5 m border-1 shadow-sm">
+    <div className="card bg-black h-150 text-white py-5 w-100 border-1 shadow-sm">
   <figure>
-    <img className='border-1'
+    <img className='border-1 rounded-lg'
       src={book.image}
       alt="Books" />
   </figure>
@@ -24,3 +24,5 @@ const BooksCard = ({book}) => {
 };
 
 export default BooksCard;
+
+
