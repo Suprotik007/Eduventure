@@ -27,11 +27,11 @@ const ClassDtlCard = () => {
 
   return (
 
-    <div className="">
+    <div className="w-11/12 mx-auto ">
      
        <h2 className="text-2xl text-center font-bold mb-2">Class Details</h2>
-<div className='card bg-black space-y-3 text-white p-5 m-5 rounded-2xl shadow'>
-      <img src={classDetail.image} alt="" />
+<div className='card bg-black space-y-3  text-white p-5 m-5 rounded-2xl shadow'>
+      <img className='h-100' src={classDetail.image} alt="" />
       <p className='text-2xl text-gray-300 font-bold'>{classDetail.title}</p>
       
       <p className='font-semibold'>Instructor: <span className=' font-semibold badge badge-warning'>{classDetail.teacherName}</span></p>
@@ -40,9 +40,9 @@ const ClassDtlCard = () => {
 totalEnrolled}</span></p>
       <p className='font-semibold'>Price: <span className='badge badge-accent font-semibold'>$ {classDetail.price}</span></p>
 
-      <div>
-         <Link to={`/classDtl/${_id}`}>
-         <button className='btn btn-primary btn-block'>Pay</button></Link>
+      <div className='py-3'>
+         <Link to='/payment'>
+         <button className='btn  btn-primary btn-block '>Pay</button></Link>
      </div>
 </div>
       

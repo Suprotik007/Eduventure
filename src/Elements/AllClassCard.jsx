@@ -18,7 +18,7 @@ const AllClassCard = () => {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto ">
       {classes.map(cls => ( 
          <div key={cls._id}  className="card bg-black text-white py-5 m border-1 shadow-sm">
   <figure>

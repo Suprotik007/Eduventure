@@ -4,8 +4,9 @@ import Home from "./src/Pages/Home";
 import RegBox from "./src/Pages/RegBox";
 import LoginBox from "./src/Pages/LoginBox";
 import AllClass from "./src/Pages/AllClass";
-
+import PrivateRoute from "./src/Providers/PrivateRoute";
 import ClassDtlCard from "./src/Elements/ClassDtlCard";
+import Payment from "./src/Pages/Payment";
 
 const router = createBrowserRouter([
 
@@ -32,7 +33,13 @@ const router = createBrowserRouter([
 {
     path : '/classDtl/:_id',
     // Component :ClassDtl
-    element: <ClassDtlCard></ClassDtlCard>
+    element:<PrivateRoute>
+         <ClassDtlCard></ClassDtlCard>
+    </PrivateRoute>
+},
+{
+    path:'/payment',
+    Component: Payment
 }]
     }
 
