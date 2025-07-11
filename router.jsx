@@ -7,6 +7,19 @@ import AllClass from "./src/Pages/AllClass";
 import PrivateRoute from "./src/Providers/PrivateRoute";
 import ClassDtlCard from "./src/Elements/ClassDtlCard";
 import Payment from "./src/Pages/Payment";
+import Dashboard from "./src/Layout/DashboardLayout/Dashboard";
+import MyEnrolledClass from "./src/Layout/DashboardLayout/StudentDashboard/MyEnrolledClass";
+import EnrollClassDetail from "./src/Layout/DashboardLayout/StudentDashboard/EnrollClassDetail ";
+import StudentProfile from "./src/Layout/DashboardLayout/StudentDashboard/StudentProfile";
+import TeacherReq from "./src/Layout/DashboardLayout/AdminDashboard/TeacherReq";
+import Profile from "./src/Layout/DashboardLayout/AdminDashboard/Profile";
+import AddClass from "./src/Layout/DashboardLayout/TeacherDashboard/AddClass";
+import MyClass from "./src/Layout/DashboardLayout/TeacherDashboard/MyClass";
+import MyClassDetail from "./src/Layout/DashboardLayout/TeacherDashboard/MyClassDetail";
+import ManageUsers from "./src/Layout/DashboardLayout/AdminDashboard/ManageUsers";
+import ManageClasses from "./src/Layout/DashboardLayout/AdminDashboard/ManageClasses";
+
+
 
 const router = createBrowserRouter([
 
@@ -38,10 +51,51 @@ const router = createBrowserRouter([
     </PrivateRoute>
 },
 {
-    path:'/payment',
+    path:'/payment/:classId',
     Component: Payment
-}]
-    }
+},
+
+]
+    },
+    {
+  path: "/dashboard",
+  element: <PrivateRoute><Dashboard /></PrivateRoute>, // your auth wrapper
+  children: [
+    // student
+    { path: "my-enroll-class", 
+        Component: MyEnrolledClass
+     },
+
+    { path: "my-enroll-class/:id",
+         Component: EnrollClassDetail},
+
+    { path: "profile",
+    Component:StudentProfile },
+
+    // teacher
+    { path: "add-class",
+    Component: AddClass},
+    { path: "my-class",
+    Component:MyClass },
+    { path: "my-class/:id",
+    Component:MyClassDetail },
+
+    // admin
+    { path: "teacher-request", 
+    Component:TeacherReq },
+
+    { path: "users",
+    Component:ManageUsers},
+
+    { path: "all-classes", 
+     Component:ManageClasses },
+
+    { path: "admin-profile", 
+   
+     Component:Profile },
+  ]
+}
+
 
 ])
 

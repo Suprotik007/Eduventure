@@ -10,9 +10,9 @@ const stripePromise = loadStripe(import.meta.env.VITE_payment_Key)
 
 const Payment = () => {
     return (
-        <Elements stripe={stripePromise}>
-            <PaymentCard></PaymentCard>
-        </Elements>
+       <Elements stripe={stripePromise}>
+      <PaymentCard />
+    </Elements>
     );
 };
 

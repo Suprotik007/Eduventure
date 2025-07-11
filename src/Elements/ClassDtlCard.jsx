@@ -41,7 +41,7 @@ totalEnrolled}</span></p>
       <p className='font-semibold'>Price: <span className='badge badge-accent font-semibold'>$ {classDetail.price}</span></p>
 
       <div className='py-3'>
-         <Link to='/payment'>
+         <Link to={`/payment/${classDetail._id}`}>
          <button className='btn  btn-primary btn-block '>Pay</button></Link>
      </div>
 </div>
