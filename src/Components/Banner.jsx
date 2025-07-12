@@ -37,7 +37,7 @@ const Banner = () => {
           <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white p-4 text-center">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">Unlock Your Potential</h2>
             <p className="text-xl mb-6 max-w-md">Discover interactive courses designed to boost your skills and accelerate your career—anytime, anywhere.</p>
-         <Link to='/allClasses'><button className="btn btn-outline  btn-lg">Explore Now</button></Link>
+         <Link to='/allClass'><button className="btn btn-outline  btn-lg">Explore Now</button></Link>
           </div>
         </SwiperSlide>
 
@@ -51,7 +51,7 @@ const Banner = () => {
           <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white p-4 text-center">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">Learn from Experts</h2>
             <p className="text-xl mb-6 max-w-md">Access top educators and industry professionals with personalized lessons tailored just for you.</p>
-            <Link to='/allClasses'><button className="btn btn-outline btn-lg">Find more</button></Link>
+            <Link to='/allClass'><button className="btn btn-outline btn-lg">Find more</button></Link>
           </div>
         </SwiperSlide>
 
@@ -65,7 +65,7 @@ const Banner = () => {
           <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white p-4 text-center">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">Join a Thriving Community</h2>
             <p className="text-xl mb-6 max-w-md">Collaborate, share, and grow with learners worldwide. Your journey to knowledge starts here!</p>
-            <Link to='/allClasses'><button className="btn btn-outline btn-lg">View Classes</button></Link>
+            <Link to='/allClass'><button className="btn btn-outline btn-lg">View Classes</button></Link>
           </div>
         </SwiperSlide>
       </Swiper>

@@ -31,7 +31,7 @@ const ClassDtlCard = () => {
      
        <h2 className="text-2xl text-center font-bold mb-2">Class Details</h2>
 <div className='card bg-black space-y-3  text-white p-5 m-5 rounded-2xl shadow'>
-      <img className='h-100' src={classDetail.image} alt="" />
+      <img className='h-50' src={classDetail.image} alt="" />
       <p className='text-2xl text-gray-300 font-bold'>{classDetail.title}</p>
       
       <p className='font-semibold'>Instructor: <span className=' font-semibold badge badge-warning'>{classDetail.teacherName}</span></p>

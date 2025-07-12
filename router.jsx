@@ -52,14 +52,16 @@ const router = createBrowserRouter([
 },
 {
     path:'/payment/:classId',
-    Component: Payment
+   element: <PrivateRoute>
+    <Payment></Payment>
+   </PrivateRoute>
 },
 
 ]
     },
     {
   path: "/dashboard",
-  element: <PrivateRoute><Dashboard /></PrivateRoute>, // your auth wrapper
+  element: <PrivateRoute><Dashboard /></PrivateRoute>, 
   children: [
     // student
     { path: "my-enroll-class", 

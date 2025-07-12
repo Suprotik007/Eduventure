@@ -66,7 +66,17 @@ const Navbar = () => {
         Become a Tutor
         </NavLink>
         
-      
+        {user &&(
+            <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? ' border-b-2 ' : ''
+          }
+        >
+        Dashboard
+        </NavLink>
+        )}
+        
   
       </div>
   )

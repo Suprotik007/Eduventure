@@ -12,7 +12,7 @@ const RegBox = () => {
   const { createUser, setUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async(e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
@@ -22,31 +22,42 @@ const RegBox = () => {
     
     
 
-    const passVerify = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    // const passVerify = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
 
-    if (!passVerify.test(password)) {
-      toast.error("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
-      return; 
+    // if (!passVerify.test(password)) {
+    //   toast.error("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
+    //   return; 
+    // }
+
+    try {
+    const result = await createUser(email, password);
+    const user = result.user;
+
+    try {
+    await updateUser({ displayName: name, photoURL: photo || null });
+
+    } catch (updateError) {
+      toast.error("Profile update failed.");
+      // We can still continue saving user info to backend even if profile update fails
     }
 
-    createUser(email, password)
-      .then(result => {
-        const user = result.user;
-        updateUser({ displayName: name, photoURL: photo })
-          .then(() => {
-            setUser({ ...user });
-            navigate('/');
-          })
-          .catch(error => {      
-            setUser(user);
-          });
-        toast.success('Registration successful');
-      })
-      .catch(error => {
-        
-        toast.error(error.message);
-      });
+    const userInfo = { name, email, photoURL: photo };
+
+    const res = await fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userInfo),
+    });
+
+    if (!res.ok) throw new Error("Failed to save user role");
+
+    toast.success("Registration successful!");
+    setUser(user);
+    navigate('/dashboard');
+  } catch (error) {
+    toast.error(error.message);
+  }
   };
 
   return (
@@ -95,3 +106,6 @@ const RegBox = () => {
 };
 
 export default RegBox;
+
+
+

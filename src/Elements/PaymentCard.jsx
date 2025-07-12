@@ -9,7 +9,7 @@ import useAuth from '../Providers/useAuth';
 const PaymentCard = () => {
   const stripe = useStripe();
   const elements = useElements();
-  const { classId } = useParams(); // renamed from parcelId
+  const { classId } = useParams(); 
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
@@ -49,10 +49,13 @@ const PaymentCard = () => {
     }
 
     // Step 2: Create payment intent
-    const res = await axiosSecure.post('/create-payment-intent', {
-      amountInCents,
-      classId,
-    });
+ const res = await axiosSecure.post('/api/create-payment-intent', {
+  amountInCents,
+  classId,
+});
+
+
+
 
     const clientSecret = res.data.clientSecret;
 
