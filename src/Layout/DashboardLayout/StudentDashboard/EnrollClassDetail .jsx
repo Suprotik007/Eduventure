@@ -1,9 +1,12 @@
 import React from 'react';
 
+
 const EnrollClassDetail  = () => {
+  
+    
     return (
         <div>
-           dfg 
+         detail 
         </div>
     );
 };

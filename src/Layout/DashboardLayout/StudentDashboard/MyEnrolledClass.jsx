@@ -36,8 +36,8 @@ const MyEnrolledClass = () => {
           <div className="p-4">
             <h2 className="text-lg text-amber-400 font-bold">{classItem.title}</h2>
             <p className="text-sm text-white font-semibold mb-3">Instructor: <span className=' text-accent'>{classItem.teacherName}</span></p>
-            <Link
-              to={`/class/${classItem._id}`} // Assuming you have a route for class details
+            <Link 
+              to={`/dashboard/my-enroll-class/${classItem._id}`} 
               className="inline-block btn-primary btn text-white px-4 py-2 rounded hover:bg-teal-700"
             >
               Continue

@@ -2,7 +2,7 @@ import { Outlet, NavLink } from 'react-router';
 import useAuth from '../../Providers/useAuth';
 
 const Dashboard = () => {
-  const { role, loading } = useAuth();  // Make sure you are getting role + loading
+  const { role, loading } = useAuth();  
 console.log(role);
 
   if (loading || !role) {
@@ -25,6 +25,7 @@ console.log(role);
             <>
               <li><NavLink className={navLinkClasses} to="/dashboard/my-enroll-class">📘 Enrolled Class</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/profile">👤 Profile</NavLink></li>
+              <li><NavLink className={navLinkClasses} to="/">◀ Go Home</NavLink></li>
             </>
           )}
           {role === 'teacher' && (

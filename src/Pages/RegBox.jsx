@@ -22,14 +22,6 @@ const RegBox = () => {
     
     
 
-    // const passVerify = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-
-
-    // if (!passVerify.test(password)) {
-    //   toast.error("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
-    //   return; 
-    // }
-
     try {
     const result = await createUser(email, password);
     const user = result.user;
@@ -39,7 +31,7 @@ const RegBox = () => {
 
     } catch (updateError) {
       toast.error("Profile update failed.");
-      // We can still continue saving user info to backend even if profile update fails
+     
     }
 
     const userInfo = { name, email, photoURL: photo };
@@ -91,6 +83,7 @@ const RegBox = () => {
  
   Register
 </button> 
+
               <ToastContainer />
              
               <p className='font-bold text-center mt-3'>

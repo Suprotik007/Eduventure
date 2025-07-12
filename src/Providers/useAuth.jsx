@@ -6,7 +6,7 @@ import { AuthContext } from '../Providers/AuthProvider';
     const authInfo=use(AuthContext)
   const [userRole, setUserRole] = useState(null);
 
-// Fetch or set user role: 'student', 'teacher', 'admin'
+
 
    return authInfo
  };

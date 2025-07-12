@@ -10,14 +10,13 @@ import Payment from "./src/Pages/Payment";
 import Dashboard from "./src/Layout/DashboardLayout/Dashboard";
 import MyEnrolledClass from "./src/Layout/DashboardLayout/StudentDashboard/MyEnrolledClass";
 import EnrollClassDetail from "./src/Layout/DashboardLayout/StudentDashboard/EnrollClassDetail ";
-import StudentProfile from "./src/Layout/DashboardLayout/StudentDashboard/StudentProfile";
 import TeacherReq from "./src/Layout/DashboardLayout/AdminDashboard/TeacherReq";
-import Profile from "./src/Layout/DashboardLayout/AdminDashboard/Profile";
 import AddClass from "./src/Layout/DashboardLayout/TeacherDashboard/AddClass";
 import MyClass from "./src/Layout/DashboardLayout/TeacherDashboard/MyClass";
 import MyClassDetail from "./src/Layout/DashboardLayout/TeacherDashboard/MyClassDetail";
 import ManageUsers from "./src/Layout/DashboardLayout/AdminDashboard/ManageUsers";
 import ManageClasses from "./src/Layout/DashboardLayout/AdminDashboard/ManageClasses";
+import Profile from "./src/Layout/DashboardLayout/UserProfile/Profile";
 
 
 
@@ -71,8 +70,7 @@ const router = createBrowserRouter([
     { path: "my-enroll-class/:id",
          Component: EnrollClassDetail},
 
-    { path: "profile",
-    Component:StudentProfile },
+    
 
     // teacher
     { path: "add-class",
@@ -92,9 +90,12 @@ const router = createBrowserRouter([
     { path: "all-classes", 
      Component:ManageClasses },
 
-    { path: "admin-profile", 
-   
-     Component:Profile },
+    //  profile
+    {
+        path:'profile',
+        Component: Profile
+    }
+    
   ]
 }
 
