@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ManageUsers = () => {
   const [search, setSearch] = useState("");
@@ -85,6 +85,7 @@ const ManageUsers = () => {
             )}
           </tbody>
         </table>
+        <ToastContainer></ToastContainer>
       </div>
     </div>
   );
