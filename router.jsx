@@ -45,7 +45,10 @@ const router = createBrowserRouter([
     },
     {
 path:'/becomeTutor',
-Component:BecomeTutor
+element: <PrivateRoute>
+    <BecomeTutor></BecomeTutor>
+</PrivateRoute>
+
     },
 {
     path : '/classDtl/:_id',

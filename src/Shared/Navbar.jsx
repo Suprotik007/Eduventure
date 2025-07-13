@@ -68,7 +68,7 @@ const Navbar = () => {
         
         {user &&(
             <NavLink
-          to="/dashboard"
+          to="/dashboard/profile"
           className={({ isActive }) =>
             isActive ? ' border-b-2 ' : ''
           }
@@ -124,7 +124,7 @@ const Navbar = () => {
 
               <div className='px-4 py-2 border-b border-gray-100  text-amber-300 font-semibold'>
                     <NavLink
-        to="/dashBoard"
+        to="/dashBoard/profile"
         
       >
         Dashboard

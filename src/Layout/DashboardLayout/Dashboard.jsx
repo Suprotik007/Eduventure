@@ -33,6 +33,7 @@ console.log(role);
               <li><NavLink className={navLinkClasses} to="/dashboard/add-class">➕ Add Class</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/my-class">📚 My Class</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/profile">👤 Profile</NavLink></li>
+              <li><NavLink className={navLinkClasses} to="/">◀ Go Home</NavLink></li>
             </>
           )}
           {role === 'admin' && (
@@ -41,6 +42,7 @@ console.log(role);
               <li><NavLink className={navLinkClasses} to="/dashboard/users">👥 Users</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/all-classes">📋 All Classes</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/profile">👤 Profile</NavLink></li>
+              <li><NavLink className={navLinkClasses} to="/">◀ Go Home</NavLink></li>
             </>
           )}
         </ul>

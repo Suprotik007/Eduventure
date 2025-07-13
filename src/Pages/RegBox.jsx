@@ -8,7 +8,6 @@ import regLottie from '../assets/lottieLogin.json.json'
 
 const RegBox = () => {
   
-  const [showPass, setShowPass] = useState(false);
   const { createUser, setUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -35,7 +34,7 @@ const RegBox = () => {
     }
 
   const userInfo = {
-  name: user.name,
+  name: user.displayName,
   email: email,
   photoURL: photo,
 
@@ -83,7 +82,7 @@ const RegBox = () => {
               <input type="email" required name='email' className="input text-black border-2 border-black  font-semibold" placeholder="Email" />
               <label className="label font-semibold">Password</label>
               <div className='relative'>
-                <input type={showPass ? 'text' : 'password'} required name='password' className="input text-black border-2 border-black font-semibold" placeholder="Password" />
+                <input type='password' required name='password' className="input text-black border-2 border-black font-semibold" placeholder="Password" />
                 
               </div>
               
