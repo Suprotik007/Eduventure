@@ -17,6 +17,7 @@ import MyClassDetail from "./src/Layout/DashboardLayout/TeacherDashboard/MyClass
 import ManageUsers from "./src/Layout/DashboardLayout/AdminDashboard/ManageUsers";
 import ManageClasses from "./src/Layout/DashboardLayout/AdminDashboard/ManageClasses";
 import Profile from "./src/Layout/DashboardLayout/UserProfile/Profile";
+import BecomeTutor from "./src/Pages/BecomeTutor";
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
     {
         path:'/allClass',
         Component:AllClass,
+    },
+    {
+path:'/becomeTutor',
+Component:BecomeTutor
     },
 {
     path : '/classDtl/:_id',

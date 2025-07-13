@@ -16,7 +16,7 @@ const Profile = () => {
         <h2 className="text-xl text-amber-300 font-bold mt-4">{user?.displayName || 'No Name Found'}</h2>
         <p className="">Role: <span className="font-medium">{role || 'Not Assigned'}</span></p>
         <p className="">Email: {user?.email}</p>
-        <p className="">Phone: {user?.phoneNumber || 'Not Provided'}</p>
+       
       </div>
     </div>
   );

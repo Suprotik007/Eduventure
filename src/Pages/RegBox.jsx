@@ -19,7 +19,7 @@ const RegBox = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+   
     
 
     try {
@@ -34,7 +34,14 @@ const RegBox = () => {
      
     }
 
-    const userInfo = { name, email, photoURL: photo };
+  const userInfo = {
+  name: user.name,
+  email: email,
+  photoURL: photo,
+
+};
+
+
 
     const res = await fetch("http://localhost:5000/users", {
       method: "POST",
@@ -46,7 +53,7 @@ const RegBox = () => {
 
     toast.success("Registration successful!");
     setUser(user);
-    navigate('/dashboard');
+    navigate('/');
   } catch (error) {
     toast.error(error.message);
   }
@@ -71,6 +78,7 @@ const RegBox = () => {
               <input type="text" required name='name' className="input text-black border-2 border-black   font-semibold" placeholder="Enter your name" />
               <label className="label  font-semibold">Photo URL</label> 
               <input type="text" required name='photo' className="input text-black border-2 border-black  font-semibold" placeholder="Photo URL" />
+              
               <label className="label font-semibold">Email</label>
               <input type="email" required name='email' className="input text-black border-2 border-black  font-semibold" placeholder="Email" />
               <label className="label font-semibold">Password</label>

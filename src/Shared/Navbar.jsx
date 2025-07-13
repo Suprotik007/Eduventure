@@ -58,7 +58,7 @@ const Navbar = () => {
         </NavLink>
       
        <NavLink
-          to="/teach"
+          to="/becomeTutor"
           className={({ isActive }) =>
             isActive ? ' border-b-2 ' : ''
           }
