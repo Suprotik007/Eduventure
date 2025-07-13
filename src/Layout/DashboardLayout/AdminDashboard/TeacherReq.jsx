@@ -39,9 +39,9 @@ const TeacherReq = () => {
   if (isLoading) return <p className="text-center text-white">Loading...</p>;
 
   return (
-    <div className="overflow-x-auto p-6">
+    <div className="overflow-x-auto  p-6">
       <h2 className="text-2xl font-bold text-white mb-4 text-center">Teacher Requests</h2>
-      <table className="table w-full bg-black text-white border">
+      <table className="table w-full rounded-3xl bg-black text-white border">
         <thead>
           <tr className="text-amber-300">
             <th>Image</th>

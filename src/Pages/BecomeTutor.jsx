@@ -57,7 +57,8 @@ const BecomeTutor = () => {
 
   const handleResubmit = async () => {
     try {
-      await axios.patch(`/teacher-requests/resubmit/${user.email}`, { status: 'pending' });
+    await axios.patch(`http://localhost:5000/teacher-requests/resubmit/${user.email}`, { status: 'pending' });
+
       toast.success('Resubmitted for review!');
       refetch();
     } catch (err) {
