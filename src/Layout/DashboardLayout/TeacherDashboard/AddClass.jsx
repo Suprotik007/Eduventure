@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const AddClass = () => {
@@ -37,7 +39,7 @@ const AddClass = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 bg-black rounded-3xl text-white p-6  shadow-lg">
+    <div className="w-sm md:w-xl mx-auto mt-10 bg-black rounded-3xl text-white p-8 shadow-lg">
       <h2 className="text-2xl font-bold mb-6 text-center">Add a New Class</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
