@@ -13,10 +13,62 @@ const MyClass = () => {
   const [selectedClass, setSelectedClass] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
+  const { data: classes = [] } = useQuery({
+    queryKey: ['myClasses', user?.email],
+    queryFn: async () => {
+      const res = await axios.get(`http://localhost:5000/classes?email=${user?.email}`);
+      return res.data;
+    },
+    enabled: !!user?.email,
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: async (id) => {
+      await axios.delete(`http://localhost:5000/classes/${id}`);
+    },
+    onSuccess: () => {
+      toast.success('Class deleted!');
+      queryClient.invalidateQueries(['myClasses']);
+    },
+  });
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This class will be permanently deleted!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteMutation.mutate(id);
+        Swal.fire('Deleted!', 'Your class has been deleted.', 'success');
+      }
+    });
+  };
+
+  const updateMutation = useMutation({
+    mutationFn: async ({ id, data }) => {
+      return await axios.patch(`http://localhost:5000/classes/${id}`, data);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(['myClasses']);
+      toast.success('Class updated successfully!');
+      setIsModalOpen(false);
+    },
+    onError: () => {
+      toast.error('Update failed.');
+    }
+  });
+
+  const handleUpdate = (id, data) => {
+    updateMutation.mutate({ id, data });
+  };
 
   return (
-    <div className="w-80 md:w-full mx-auto p-6">
+    <div className="w-80   md:w-full mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6 text-black">My Classes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {classes.map((cls) => (
