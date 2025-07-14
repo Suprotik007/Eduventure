@@ -12,6 +12,7 @@ const UpdateModal = ({ isOpen, onClose, onUpdate, classData }) => {
   });
 
   const onSubmit = (data) => {
+    
     onUpdate(classData._id, data);
     reset();
   };

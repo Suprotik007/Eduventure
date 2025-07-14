@@ -20,7 +20,7 @@ const AddClass = () => {
   const onSubmit = async (data) => {
     const newClass = {
       title: data.title,
-      name: user.displayName,
+      teacherName: user.displayName,
       email: user.email,
       price: parseFloat(data.price),
       description: data.description,
