@@ -40,7 +40,7 @@ console.log(role);
             <>
               <li><NavLink className={navLinkClasses}to="/dashboard/teacher-request">👩‍🏫 Teacher Request</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/users">👥 Users</NavLink></li>
-              <li><NavLink className={navLinkClasses} to="/dashboard/all-classes">📋 All Classes</NavLink></li>
+              <li><NavLink className={navLinkClasses} to="/dashboard/all-classes">📋  Class Requests</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/dashboard/profile">👤 Profile</NavLink></li>
               <li><NavLink className={navLinkClasses} to="/">◀ Go Home</NavLink></li>
             </>

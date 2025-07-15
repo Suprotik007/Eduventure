@@ -16,7 +16,7 @@ const MyClass = () => {
   const { data: classes = [] } = useQuery({
     queryKey: ['myClasses', user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/classes?email=${user?.email}`);
+      const res = await axios.get(`http://localhost:5000/classes/teacher?email=${user?.email}`);
       return res.data;
     },
     enabled: !!user?.email,

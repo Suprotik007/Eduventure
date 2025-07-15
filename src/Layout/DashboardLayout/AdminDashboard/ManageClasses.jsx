@@ -9,7 +9,7 @@ const ManageClasses = () => {
   const { data: classes = [], isLoading } = useQuery({
     queryKey: ['allClasses'],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/classes');
+      const res = await axios.get('http://localhost:5000/classes/teacher');
       return res.data;
     },
   });
