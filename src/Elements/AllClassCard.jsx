@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 
 const fetchClasses = async () => {
-  const res = await axios.get('http://localhost:5000/classes');
+  const res = await axios.get('http://localhost:5000/allClasses');
   return res.data;
 };
 
@@ -20,7 +20,7 @@ const AllClassCard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto ">
       {classes.map(cls => ( 
-         <div key={cls._id}  className="card bg-black text-white py-5 m border-1 shadow-sm">
+         <div key={cls._id}  className="card rounded-2xl bg-black text-white py-5 m border-1 shadow-sm">
   <figure>
     <img className='border-1 rounded-lg'
       src={cls.image}

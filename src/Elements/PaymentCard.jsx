@@ -48,7 +48,7 @@ const PaymentCard = () => {
       return;
     }
 
-    // Step 2: Create payment intent
+
  const res = await axiosSecure.post('/api/create-payment-intent', {
   amountInCents,
   classId,
@@ -59,7 +59,6 @@ const PaymentCard = () => {
 
     const clientSecret = res.data.clientSecret;
 
-    // Step 3: Confirm card payment
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: card,
@@ -77,7 +76,7 @@ const PaymentCard = () => {
       if (result.paymentIntent.status === 'succeeded') {
         const transactionId = result.paymentIntent.id;
 
-        // Step 4: Store payment & enrollment info
+        
         const paymentData = {
           classId,
           classTitle: classInfo.title,

@@ -67,10 +67,14 @@ const BecomeTutor = () => {
   };
 
   
-  if (requestData?.role === 'teacher') {
+  if(
+  requestData?.role === 'teacher' || 
+  requestData?.status === 'approved' 
+) 
+     {
     return (
       <div className="p-6 text-center">
-        <h2 className="text-2xl font-semibold text-green-500">You are already a teacher.</h2>
+        <h2 className="text-2xl font-semibold text-green-500">You are already an Instructor.</h2>
       </div>
     );
   }

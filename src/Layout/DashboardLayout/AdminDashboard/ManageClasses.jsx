@@ -9,7 +9,7 @@ const ManageClasses = () => {
   const { data: classes = [], isLoading } = useQuery({
     queryKey: ['allClasses'],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/classes/teacher');
+      const res = await axios.get('http://localhost:5000/classes');
       return res.data;
     },
   });
@@ -66,7 +66,7 @@ const ManageClasses = () => {
                   {cls.status}
                 </span>
               </td>
-              <td className="space-x-2">
+              <td className="space-y-2">
                 <button
                   className="btn btn-sm btn-success"
                   onClick={() => approveMutation.mutate(cls._id)}
