@@ -62,25 +62,25 @@ const LoginBox = () => {
        
     </div>
 
-    <div className="card border-2  rounded-2xl w-full max-w-sm shrink-0 shadow-2xl">
-      <div className="card-body">
+    <div className="card border-2 bg-gray-900 border-white border-dashed rounded-2xl w-full max-w-sm shrink-0 shadow-2xl">
+      <div className="card-body ">
       
         <form  onSubmit={handleLogin} className="fieldset">
-          <label className="label font-semibold">Email</label>
+          <label className="label text-yellow-400 text-lg font-semibold">Email</label>
           <input type="email" required name='email' className="input border-2 border-black  font-semibold" placeholder="Email"   value={email}
               onChange={(e) => setEmail(e.target.value)}/>
-          <label className="label font-semibold">Password</label>
+          <label className="label text-yellow-400 text-lg font-semibold">Password</label>
           <input type="password" required name='password' className="input text-black border-2 border-black font-semibold" placeholder="Password" />
          
 
         
-          <button type='submit' className="btn btn-dash text-gray-500 border-black hover:border-blue-500 btn-outline border-3 rounded-4xl hover:text-blue-500 hover:bg-black mt-4">Login with Email</button><ToastContainer />
-          <button onClick={handleGoogleLogin} className="btn btn-dash text-gray-500  btn-outline border-3 border-black hover:border-teal-500 rounded-4xl hover:text-teal-300 hover:bg-black ">
+          <button type='submit' className="btn btn-outline  btn-dash  border-blue-500 text-blue-600 hover:border-blue-500  border-3 rounded-4xl hover:text-blue-500 hover:bg-black mt-4">Login with Email</button><ToastContainer />
+          <button onClick={handleGoogleLogin} className="btn btn-dash border-teal-500 text-teal-500  btn-outline border-3  hover:border-teal-500 rounded-4xl hover:text-teal-300 hover:bg-black ">
  
   Login with Google
 </button> 
 
-          <p className=' font-bold text-center text-gray-800 mt-3'>Don’t Have An Account ? <Link to='/reg'> <span className=' font-bold text-fuchsia-600'>Register</span></Link></p>
+          <p className=' font-bold text-center text-red-500 mt-3'>Don’t Have An Account ? <Link to='/reg'> <span className=' font-bold text-yellow-400'>Register</span></Link></p>
         </form>
       </div>
     </div>

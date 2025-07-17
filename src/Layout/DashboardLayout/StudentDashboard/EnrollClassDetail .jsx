@@ -51,6 +51,7 @@ const { data: assignment , isPending } = useQuery({
     
     onSuccess: () => {
       toast.success('Assignment submitted!');
+      setSubmissionTexts('')
       queryClient.invalidateQueries({ queryKey: ['assignments', classId] });
     },
     onError: () => toast.error('Submission failed'),
@@ -59,7 +60,7 @@ const { data: assignment , isPending } = useQuery({
   
   const submitTER = useMutation({
     mutationFn: async () => {
-      await axios.post(`${import.meta.env.VITE_API_URL}/feedbacks`, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/progress/feedbacks`, {
         classId,
         student: user.displayName,
         email: user.email,
@@ -143,7 +144,7 @@ const { data: assignment , isPending } = useQuery({
           className="btn btn-primary text-white"
           onClick={() => setIsModalOpen(true)}
         >
-          Teaching Evaluation Report (TER)
+          Report or Feedback
         </button>
       </div>
 
@@ -177,7 +178,7 @@ const { data: assignment , isPending } = useQuery({
 
         <div className="flex justify-end gap-4">
           <button
-            className="btn btn-secondary"
+            className="btn btn-error btn-outline"
             onClick={() => setIsModalOpen(false)}
           >
             Cancel

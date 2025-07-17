@@ -33,12 +33,14 @@ const RegBox = () => {
      
     }
 
-  const userInfo = {
-  name: user.displayName,
-  email: email,
-  photoURL: photo,
+//   const userInfo = {
+//   name: user.displayName,
+//   email: email,
+//   photoURL: photo,
 
-};
+// };
+const userInfo = { name, email, photoURL: photo };
+
 
 
 
@@ -69,32 +71,32 @@ const RegBox = () => {
              <Lottie className='' animationData={regLottie} loop={true}> </Lottie>
                
             </div>
-        <div className="card border-2  my-10 rounded-2xl w-full max-w-sm shrink-0 shadow-2xl">
-          <div className="card-body">
+        <div className="card border-2 border-dashed border-white bg-gray-900  my-10 rounded-2xl w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card-body ">
             
             <form onSubmit={handleRegister} className="fieldset">
-              <label className="label font-semibold">Name</label>
+              <label className="label text-yellow-300  font-semibold">Name</label>
               <input type="text" required name='name' className="input text-black border-2 border-black   font-semibold" placeholder="Enter your name" />
-              <label className="label  font-semibold">Photo URL</label> 
+              <label className="label  text-yellow-300    font-semibold">Photo URL</label> 
               <input type="text" required name='photo' className="input text-black border-2 border-black  font-semibold" placeholder="Photo URL" />
               
-              <label className="label font-semibold">Email</label>
+              <label className="label  text-yellow-300    font-semibold">Email</label>
               <input type="email" required name='email' className="input text-black border-2 border-black  font-semibold" placeholder="Email" />
-              <label className="label font-semibold">Password</label>
+              <label className="label  text-yellow-300   font-semibold">Password</label>
               <div className='relative'>
                 <input type='password' required name='password' className="input text-black border-2 border-black font-semibold" placeholder="Password" />
                 
               </div>
               
-                <button type='submit' className="btn btn-dash mt-5 text-gray-500  btn-outline border-3 border-black hover:border-teal-500 rounded-4xl hover:text-teal-300 hover:bg-black ">
+                <button type='submit' className="btn btn-dash mt-5 text-teal-500 border-teal-500  btn-outline border-3  hover:border-teal-500 rounded-4xl hover:text-teal-300 hover:bg-black ">
  
   Register
 </button> 
 
               <ToastContainer />
              
-              <p className='font-bold text-center mt-3'>
-                Already Have An Account? <Link to='/login'><span className='text-amber-700 font-bold'>Login</span></Link>
+              <p className='font-bold text-white text-center mt-3'>
+                Already Have An Account? <Link to='/login'><span className='text-yellow-400 font-bold'>Login</span></Link>
               </p>
             </form>
           </div>

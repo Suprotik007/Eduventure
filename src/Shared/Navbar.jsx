@@ -111,7 +111,7 @@ const Navbar = () => {
           <div className="relative" ref={dropdownRef}>
             <img
               src={user.photoURL || ''}
-              alt={user.displayName || 'User'}
+              alt={user.displayName || 'Image'}
               title={user.displayName || ''}
               className="w-12 h-12 rounded-full cursor-pointer border "
               onClick={() => setDropdownOpen((prev) => !prev)}

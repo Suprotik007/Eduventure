@@ -4,12 +4,14 @@ import Partners from '../Components/Partners';
 import StartTeaching from '../Components/startTeaching';
 import BooksSection from '../Components/BooksSection';
 import Events from '../Components/Events';
+import TopClasses from '../Components/TopClasses';
 
 const Home = () => {
     return (
         <div className='space-y-12 w-11/12 mx-auto'>
             <Banner></Banner>
             <Partners></Partners>
+            <TopClasses></TopClasses>
             <StartTeaching></StartTeaching>
             <BooksSection></BooksSection>
             <Events></Events>

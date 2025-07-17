@@ -35,7 +35,7 @@ const ManageClasses = () => {
   return (
     <div className="p-6 overflow-x-auto">
       <h2 className="text-2xl font-bold mb-4 ">All Submitted Classes</h2>
-      <table className="table w-full rounded-3xl">
+      <table className="table w-full ">
         <thead className='text-yellow-400 bg-black'>
           <tr>
             <th>Title</th>
