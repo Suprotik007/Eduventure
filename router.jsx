@@ -76,7 +76,8 @@ element: <PrivateRoute>
      },
 
     { path: "my-enroll-class/:id",
-         Component: EnrollClassDetail},
+         Component: EnrollClassDetail
+        },
 
     
 

@@ -3,7 +3,7 @@ import useAuth from '../../Providers/useAuth';
 
 const Dashboard = () => {
   const { role, loading } = useAuth();  
-console.log(role);
+
 
   if (loading || !role) {
     return <div className="text-center mt-20 text-xl">Loading dashboard...</div>;
