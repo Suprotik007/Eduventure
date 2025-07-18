@@ -10,7 +10,7 @@ const Stats= () => {
     },
   });
 
-  const { users = 0, classes = 0, enrollments = 0 } = data;
+  const { users = 0, classes = 0, totalEnrollments = 0 } = data;
 
   return (
     <section className="my-10 px-4  md:w-10/12 mx-auto  gap-8 items-center">
@@ -25,7 +25,7 @@ const Stats= () => {
           <p className="mt-2 text-green-800 font-medium">Total Classes</p>
         </div>
         <div className="bg-purple-200 shadow-xl p-6 rounded-2xl text-center">
-          <h3 className="text-4xl font-bold text-purple-600">{enrollments}</h3>
+          <h3 className="text-4xl font-bold text-purple-600">{totalEnrollments}</h3>
           <p className="mt-2 text-purple-600 font-medium">Total Enrolled</p>
         </div>
       </div>

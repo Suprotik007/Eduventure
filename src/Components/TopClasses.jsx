@@ -35,7 +35,7 @@ const TopClasses = () => {
 
   return (
     <section className="">
-      <h2 className="text-3xl font-bold mb-5 text-center "> Popular Classes</h2>
+      <h2 className="text-3xl font-semibold mb-5 text-center "> Popular Classes</h2>
       <Slider {...sliderSettings}>
         {popular.map(cls => (
           <div key={cls._id} className="px-4 py-3">

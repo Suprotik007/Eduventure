@@ -2,8 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-;
-import Rating from 'react-rating-stars-component';
+import StarRatings from 'react-star-ratings';
 import { ToastContainer, toast } from 'react-toastify';
 import Modal from 'react-modal';
 import { AuthContext } from '../../../Providers/AuthProvider';
@@ -21,7 +20,10 @@ const EnrollClassDetail = () => {
   const [feedbackText, setFeedbackText] = useState('');
   const [rating, setRating] = useState(0);
 
-  
+  const ratingChanged = (newRating) => {
+    setRating(newRating); 
+  console.log(newRating);
+};
 const { data: assignment , isPending } = useQuery({
   queryKey: ['assignments', classId],
   queryFn: async () => {
@@ -165,16 +167,22 @@ const { data: assignment , isPending } = useQuery({
           onChange={(e) => setFeedbackText(e.target.value)}
         />
 
-        <div className="mb-4">
-          <p className="text-black font-semibold mb-1">Rating:</p>
-          <Rating
-            count={5}
-            value={rating}
-            onChange={(newRating) => setRating(newRating)}
-            size={24}
-            activeColor="#ffd700"
-          />
-        </div>
+    <div className="mb-4 text-black">
+  <p className="font-semibold mb-1">Rating:</p>
+<StarRatings
+  rating={rating}
+  starRatedColor="black"
+  starHoverColor="#ffd700"
+  changeRating={setRating}
+  numberOfStars={5}
+  name='rating'
+  starDimension="24px"
+  starSpacing="2px"
+/>
+ 
+
+</div>
+
 
         <div className="flex justify-end gap-4">
           <button

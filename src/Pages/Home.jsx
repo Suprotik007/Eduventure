@@ -6,6 +6,7 @@ import BooksSection from '../Components/BooksSection';
 import Events from '../Components/Events';
 import TopClasses from '../Components/TopClasses';
 import Stats from '../Components/Stats';
+import Feedbacks from '../Components/Feedbacks';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Partners></Partners>
             <TopClasses></TopClasses>
             <Stats></Stats>
+            <Feedbacks></Feedbacks>
             <StartTeaching></StartTeaching>
             <BooksSection></BooksSection>
             <Events></Events>
