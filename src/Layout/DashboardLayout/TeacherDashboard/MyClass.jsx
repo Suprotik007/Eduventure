@@ -52,7 +52,10 @@ const MyClass = () => {
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }) => {
       return await axios.patch(`http://localhost:5000/classes/${id}`, data);
+      
+      
     },
+    
     onSuccess: () => {
       queryClient.invalidateQueries(['myClasses']);
       toast.success('Class updated successfully!');
@@ -61,11 +64,13 @@ const MyClass = () => {
     onError: () => {
       toast.error('Update failed.');
     }
+    
   });
 
-  const handleUpdate = (id, data) => {
-    updateMutation.mutate({ id, data });
-  };
+ const handleUpdate = (id, data) => {
+ 
+  updateMutation.mutate({ id, data });
+};
 
   return (
     <div className="w-80   md:w-full mx-auto p-6">
@@ -85,6 +90,7 @@ const MyClass = () => {
             <div className="grid grid-cols-2 md:flex gap-3 mt-4">
               <button
                 onClick={() => {
+                  
                   setSelectedClass(cls);
                   setIsModalOpen(true);
                 }}

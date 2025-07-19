@@ -44,10 +44,16 @@ const Feedbacks = () => {
         {Array.isArray(feedbacks) && feedbacks.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="bg-black shadow-md rounded-lg p-6 border-1 border-fuchsia-500 h-full">
-                {/* <img src={user.photoURL} alt="" /> */}
+              <img
+  src={item.user?.photoURL}
+  alt={item.student || 'User Photo'}
+  className="rounded-full text-white w-16 h-16 mb-2 object-cover"
+/>
+
               <h3 className="text-xl text-yellow-400 font-semibold mb-1">{item.student || "Anonymous"}</h3>
               <p className="text-teal-400 mb-2 italic">{item.email}</p>
-              <p className="text-sm text-gray-300 mb-4">Class: <strong>{item.classId || 'Unknown'}</strong></p>
+              <p className="text-sm text-gray-300 mb-4">Class: <strong>{item.classTitle || 'Unknown'}</strong></p>
+
               <p className="text-gray-300">"{item.feedback}"</p>
               <div className="mt-2 text-white ">Rating : <span className='text-yellow-500'>★ {item.rating}</span></div>
             </div>

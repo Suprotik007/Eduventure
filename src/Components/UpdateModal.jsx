@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const UpdateModal = ({ isOpen, onClose, onUpdate, classData }) => {
-  const { register, handleSubmit, reset } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       title: classData?.title,
       price: classData?.price,
@@ -13,8 +13,10 @@ const UpdateModal = ({ isOpen, onClose, onUpdate, classData }) => {
 
   const onSubmit = (data) => {
     
-    onUpdate(classData._id, data);
-    reset();
+    onUpdate( data);
+   
+    
+    // reset();
   };
 
   if (!isOpen) return null;
@@ -30,7 +32,7 @@ const UpdateModal = ({ isOpen, onClose, onUpdate, classData }) => {
           <textarea {...register('description')} placeholder="Description" className="textarea textarea-bordered w-full"></textarea>
           <div className="flex justify-end gap-3">
             <button onClick={onClose} type="button" className="btn btn-outline btn-error ">Cancel</button>
-            <button type="submit" className="btn btn-primary">Update</button>
+            <button  type="submit" className="btn btn-primary">Update</button>
           </div>
         </form>
       </div>

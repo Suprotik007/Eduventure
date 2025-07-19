@@ -1,48 +1,45 @@
 
-import React, {  useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link,  useNavigate } from 'react-router';
 import { AuthContext } from '../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import Lottie from "lottie-react";
 import regLottie from '../assets/lottieLogin.json.json'
+import { auth } from '../../Firebase';
 
 const RegBox = () => {
   
   const { createUser, setUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleRegister = async(e) => {
-    e.preventDefault();
+ const handleRegister = async (e) => {
+  e.preventDefault();
+  const name = e.target.name.value;
+  const photo = e.target.photo.value;
+  const email = e.target.email.value;
+  const password = e.target.password.value;
 
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-   
+  try {
     
-
-    try {
     const result = await createUser(email, password);
     const user = result.user;
 
-    try {
-    await updateUser({ displayName: name, photoURL: photo || null });
 
-    } catch (updateError) {
-      toast.error("Profile update failed.");
-     
-    }
+    await updateUser({
+      displayName: name,
+      photoURL: photo || null
+    });
 
-//   const userInfo = {
-//   name: user.displayName,
-//   email: email,
-//   photoURL: photo,
+   
+    const updatedUser = auth.currentUser;
 
-// };
-const userInfo = { name, email, photoURL: photo };
-
-
-
+  
+    const userInfo = {
+      name: updatedUser.displayName,
+      email: email,
+      photoURL: updatedUser.photoURL,
+      role: "student"
+    };
 
     const res = await fetch("http://localhost:5000/users", {
       method: "POST",
@@ -50,15 +47,15 @@ const userInfo = { name, email, photoURL: photo };
       body: JSON.stringify(userInfo),
     });
 
-    if (!res.ok) throw new Error("Failed to save user role");
+    if (!res.ok) throw new Error("Failed to save user data");
 
     toast.success("Registration successful!");
-    setUser(user);
+    setUser(updatedUser);
     navigate('/');
   } catch (error) {
     toast.error(error.message);
   }
-  };
+};
 
   return (
     <div>

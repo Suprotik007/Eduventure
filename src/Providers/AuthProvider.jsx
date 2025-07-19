@@ -38,46 +38,41 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
+  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    setUser(currentUser);
+    setLoading(false);
 
-      if (currentUser?.email) {
-        try {
-          const res = await axios.get(`http://localhost:5000/users/${encodeURIComponent(currentUser.email)}`);
+    if (currentUser?.email) {
+      try {
+       
+        const res = await axios.get(
+          `http://localhost:5000/users/${encodeURIComponent(currentUser.email)}`
+        );
 
-          if (!res.data.role) {
-            await axios.patch(`http://localhost:5000/users/role/${encodeURIComponent(currentUser.email)}`, {
-              role: "student",
-            });
-          }
+      
+        if (!res.data || !res.data.name || !res.data.photoURL) {
+          const userData = {
+            name: currentUser.displayName || res.data?.name || "New User",
+            email: currentUser.email,
+            photoURL: currentUser.photoURL || res.data?.photoURL || null,
+            role: res.data?.role || "student"
+          };
 
-          setRole(res.data.role || "student");
-        } catch (err) {
-          if (err.response && err.response.status === 404) {
-            const newUser = {
-              name: currentUser.displayName,
-              email: currentUser.email,
-              photoURL: currentUser.photoURL,
-              role: "student",
-            };
-            try {
-              await axios.post(`http://localhost:5000/users`, newUser);
-              setRole("student");
-            } catch (postErr) {
-              console.error("Error creating new Google user:", postErr);
-            }
-          } else {
-            console.error("Error fetching user role:", err);
-          }
+          
+          await axios.post('http://localhost:5000/users', userData);
         }
-      } else {
-        setRole(null);
-      }
-    });
 
-    return () => unsubscribe();
-  }, []);
+        setRole(res.data?.role || "student");
+      } catch (err) {
+        console.error("User sync error:", err);
+      }
+    } else {
+      setRole(null);
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
 
   const authData = {
     user,
