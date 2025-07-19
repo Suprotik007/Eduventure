@@ -15,7 +15,7 @@ const Feedbacks = () => {
       .then(res => {
         if (Array.isArray(res.data)) {
           setFeedbacks(res.data);
-          console.log(res.data);
+         
           
         } else {
           setFeedbacks([]);
@@ -45,7 +45,7 @@ const Feedbacks = () => {
           <SwiperSlide key={index}>
             <div className="bg-black shadow-md rounded-lg p-6 border-1 border-fuchsia-500 h-full">
               <img
-  src={item.user?.photoURL}
+  src={item.userImage}
   alt={item.student || 'User Photo'}
   className="rounded-full text-white w-16 h-16 mb-2 object-cover"
 />

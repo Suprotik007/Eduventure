@@ -17,7 +17,7 @@ const Dashboard = () => {
     }`;
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
+      
       <aside className=" bg-black text-white p-4">
         <h2 className="text-xl font-bold border-b-2 mb-4">Eduventure</h2>
         <ul className="space-y-2">
@@ -48,7 +48,7 @@ const Dashboard = () => {
         </ul>
       </aside>
 
-      {/* Main content */}
+    
       <main className="flex-1 bg-gray-100 p-4">
         <Outlet />
       </main>

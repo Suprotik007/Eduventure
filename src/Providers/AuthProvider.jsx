@@ -13,6 +13,21 @@ import { app } from '../../Firebase';
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
+const getJwtAndStore = async () => {
+  const user = auth.currentUser;
+
+  if (user) {
+    const idToken = await user.getIdToken();
+
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {
+      idToken,
+    });
+
+    const jwt = res.data.token;
+    localStorage.setItem("access-token", jwt);
+  }
+};
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null); 
@@ -25,6 +40,7 @@ const AuthProvider = ({ children }) => {
 
   const signIn = (email, password) => {
     setLoading(true);
+    
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -44,9 +60,19 @@ const AuthProvider = ({ children }) => {
 
     if (currentUser?.email) {
       try {
-       
+           const idToken = await currentUser.getIdToken();
+
+   
+    const jwtResponse = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {
+      idToken,
+    });
+
+    const token = jwtResponse.data.token;
+    localStorage.setItem('access-token', token);
+
+
         const res = await axios.get(
-          `http://localhost:5000/users/${encodeURIComponent(currentUser.email)}`
+          `http://localhost:5000/users/${encodeURIComponent(currentUser.email)},`
         );
 
       
@@ -65,6 +91,14 @@ const AuthProvider = ({ children }) => {
         setRole(res.data?.role || "student");
       } catch (err) {
         console.error("User sync error:", err);
+            const idToken = await currentUser.getIdToken();
+
+    const jwtResponse = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {
+      idToken,
+    });
+
+    const token = jwtResponse.data.token;
+    localStorage.setItem('access-token', token);
       }
     } else {
       setRole(null);

@@ -29,7 +29,7 @@ const MyEnrolledClass = () => {
   if (loading) return <div className="text-center mt-20">Loading enrolled classes...</div>;
 
   return (
-    <div className="p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+    <div className="w-50 md:w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
       {enrolledClasses.map((classItem) => (
         <div key={classItem._id} className="bg-black shadow-md rounded-xl overflow-hidden">
           <img src={classItem.image} alt={classItem.title} className="w-full p-3 rounded-2xl h-48 object-cover" />

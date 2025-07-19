@@ -104,7 +104,7 @@ const BecomeTutor = () => {
   }
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-black text-white rounded shadow-lg">
+    <div className="w-11/12 md:max-w-xl mx-auto mt-10 p-6 bg-black text-white rounded-3xl shadow-lg">
       <h2 className="text-2xl font-bold mb-4 text-center">Teach on Edventure</h2>
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

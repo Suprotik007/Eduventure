@@ -27,7 +27,7 @@ const ClassDtlCard = () => {
 
   return (
 
-    <div className="w-11/12 mx-auto ">
+    <div className="w-11/12 md:w-6/12 lg:w-4/12 mx-auto ">
      
        <h2 className="text-2xl text-center font-bold mb-2">Class Details</h2>
 <div className='card bg-black space-y-3  text-white p-5 m-5 rounded-2xl shadow'>

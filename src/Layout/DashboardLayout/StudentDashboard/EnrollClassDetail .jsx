@@ -22,7 +22,7 @@ const EnrollClassDetail = () => {
 
   const ratingChanged = (newRating) => {
     setRating(newRating); 
-  console.log(newRating);
+
 };
 const { data: assignment , isPending } = useQuery({
   queryKey: ['assignments', classId],
@@ -67,6 +67,7 @@ const { data: assignment , isPending } = useQuery({
         student: user.displayName,
         email: user.email,
         feedback: feedbackText,
+         photoURL: user.photoURL,
         rating,
       });
     },
@@ -155,7 +156,7 @@ const { data: assignment , isPending } = useQuery({
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="TER Modal"
-        className="bg-white p-6 rounded-md w-[90%] max-w-lg mx-auto mt-20 outline-none shadow-lg"
+        className="bg-white p-6 rounded-md  :max-w-lg mx-auto mt-20 outline-none shadow-lg"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
       >
         <h2 className="text-xl font-bold mb-4 text-black">Teaching Evaluation Report</h2>
