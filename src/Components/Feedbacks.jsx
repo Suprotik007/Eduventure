@@ -43,7 +43,7 @@ const Feedbacks = () => {
       >
         {Array.isArray(feedbacks) && feedbacks.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-black shadow-md rounded-lg p-6 border-1 border-fuchsia-500 h-full">
+            <div className="bg-black h-full shadow-md rounded-lg p-6 border-1 border-blue-500 ">
               <img
   src={item.userImage}
   alt={item.student || 'User Photo'}

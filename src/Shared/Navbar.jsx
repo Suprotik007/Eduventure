@@ -96,7 +96,10 @@ const Navbar = () => {
           {links}
        </ul> 
      </div>
-     <a className=" text-xl font-bold logo-font ">Eduventure</a>
+  
+       <a className="flex items-center  text-xl font-bold logo-font ">
+     <img className='w-5 h-5' src="../../E-removebg-preview.png" alt="" />duventure</a>
+    
    </div>
    <div className="navbar-center hidden lg:flex">
      <ul className="menu menu-horizontal px-1 ">

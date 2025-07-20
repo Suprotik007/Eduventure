@@ -1,12 +1,150 @@
-# React + Vite
+## 🎓 Edventure
+Welcome to Edventure — a full-stack e-learning platform where students can explore and enroll in classes, teachers can create and manage their own courses, and admins can control the platform's operations.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🔐 Admin Access
+email: bob@gmail.com
 
-Currently, two official plugins are available:
+Password: bob123@
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### 🌐 Live Website
+https://edventure-learning.vercel.app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🌟 Key Features
+##### Role-Based Dashboard: 
+Separate dashboards for Students, Teachers, and Admins with protected routes using JWT.
+
+##### Secure Authentication:  
+Login via Email/Password or Google using Firebase Auth, with JWT stored in localStorage.
+
+##### Stripe Integration: 
+Secure and seamless class enrollment payment using Stripe.
+
+##### Dynamic Homepage: 
+Carousel banner, feedback section, partner showcase, and key metrics displayed attractively.
+
+##### Popular Classes Slider: 
+Highlights trending classes based on total enrollment.
+
+##### Admin Control Panel: 
+Approve/reject teacher requests and classes, manage users, and monitor system stats.
+
+##### Teacher Tools: 
+Teachers can add classes, manage assignments, track class progress, and see total enrollments.
+
+##### Student Features: 
+Students can view enrolled classes, continue learning, submit assignments, and evaluate teaching.
+
+##### Feedback System: 
+Teaching Evaluation Reports collected and displayed publicly on the homepage.
+
+##### Responsive Design:
+Fully responsive UI with navbar dropdowns, profile display, modals, and dynamic data rendering.
+
+🧭 Navigation
+##### 🔼 Navbar
+Logo + Website Name
+
+Home, All Classes, Teach on Edventure
+
+Sign In (when logged out)
+
+Profile Picture Dropdown (when logged in):
+
+Username
+
+Dashboard
+
+Logout
+
+##### 🏠 Home Page
+Banner carousel
+
+Partners/collaborators section
+
+Popular classes (slider)
+
+Feedback (carousel)
+
+Site Stats (users, classes, enrollments)
+
+“Become a Teacher” CTA section
+
+Two extra sections (custom)
+
+##### 📚 All Classes
+Card display of approved classes
+
+Info: Title, Teacher, Price, Image, Enroll button
+
+Clicking Enroll → Class Details → Payment → My Enrolled Classes
+
+##### 🧑‍🏫 Teach on Eduventure
+Apply for teacher (Name, Experience, Category, Title, etc.)
+
+Admin approval required
+
+Conditional form visibility based on status
+
+##### 🧑‍🎓 Student Dashboard
+My Enrolled Classes
+
+View all enrolled classes
+
+Continue to see assignments
+
+Class Detail Page
+
+Assignment list with submission
+
+Teaching Evaluation form
+
+Profile
+
+Name, Email, Role, Image, Phone
+
+##### 👩‍🏫 Teacher Dashboard
+Add Class
+
+My Classes
+
+Update/Delete/See Details
+
+Class progress: Enrollment, Assignments, Submissions
+
+Create Assignments via modal
+
+Profile
+
+##### 🛠 Admin Dashboard
+Teacher Requests
+
+Approve/Reject with status update
+
+Users
+
+Promote to admin
+
+Search functionality (username/email)
+
+All Classes
+
+Approve/Reject classes
+
+View progress (assignments & submissions)
+
+Profile
+
+##### 🧩 Tech Stack
+Frontend: React, React Router, Tailwind CSS, TanStack Query, Axios, React Hook Form, Firebase
+
+Backend: Express.js, MongoDB, Stripe, JWT
+
+Deployment: Vercel (Frontend), Render/Other (Backend)
+
+##### 🔐 JWT Auth
+Firebase handles login (Email/Password + Google)
+
+JWT issued on login and stored in localStorage
+
+Used to secure protected routes and verify roles
