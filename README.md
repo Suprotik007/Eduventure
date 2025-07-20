@@ -11,38 +11,38 @@ Password: bob123@
 https://edventure-learning.vercel.app
 
 ### 🌟 Key Features
-##### Role-Based Dashboard: 
+#### Role-Based Dashboard: 
 Separate dashboards for Students, Teachers, and Admins with protected routes using JWT.
 
-##### Secure Authentication:  
+#### Secure Authentication:  
 Login via Email/Password or Google using Firebase Auth, with JWT stored in localStorage.
 
-##### Stripe Integration: 
+#### Stripe Integration: 
 Secure and seamless class enrollment payment using Stripe.
 
-##### Dynamic Homepage: 
+#### Dynamic Homepage: 
 Carousel banner, feedback section, partner showcase, and key metrics displayed attractively.
 
-##### Popular Classes Slider: 
+#### Popular Classes Slider: 
 Highlights trending classes based on total enrollment.
 
-##### Admin Control Panel: 
+#### Admin Control Panel: 
 Approve/reject teacher requests and classes, manage users, and monitor system stats.
 
-##### Teacher Tools: 
+#### Teacher Tools: 
 Teachers can add classes, manage assignments, track class progress, and see total enrollments.
 
-##### Student Features: 
+#### Student Features: 
 Students can view enrolled classes, continue learning, submit assignments, and evaluate teaching.
 
-##### Feedback System: 
+#### Feedback System: 
 Teaching Evaluation Reports collected and displayed publicly on the homepage.
 
-##### Responsive Design:
+#### Responsive Design:
 Fully responsive UI with navbar dropdowns, profile display, modals, and dynamic data rendering.
 
-🧭 Navigation
-##### 🔼 Navbar
+####🧭 Navigation
+### 🔼 Navbar
 Logo + Website Name
 
 Home, All Classes, Teach on Edventure
@@ -57,7 +57,7 @@ Dashboard
 
 Logout
 
-##### 🏠 Home Page
+### 🏠 Home Page
 Banner carousel
 
 Partners/collaborators section
@@ -72,21 +72,21 @@ Site Stats (users, classes, enrollments)
 
 Two extra sections (custom)
 
-##### 📚 All Classes
+### 📚 All Classes
 Card display of approved classes
 
 Info: Title, Teacher, Price, Image, Enroll button
 
 Clicking Enroll → Class Details → Payment → My Enrolled Classes
 
-##### 🧑‍🏫 Teach on Eduventure
+### 🧑‍🏫 Teach on Eduventure
 Apply for teacher (Name, Experience, Category, Title, etc.)
 
 Admin approval required
 
 Conditional form visibility based on status
 
-##### 🧑‍🎓 Student Dashboard
+### 🧑‍🎓 Student Dashboard
 My Enrolled Classes
 
 View all enrolled classes
@@ -103,7 +103,7 @@ Profile
 
 Name, Email, Role, Image, Phone
 
-##### 👩‍🏫 Teacher Dashboard
+### 👩‍🏫 Teacher Dashboard
 Add Class
 
 My Classes
@@ -116,7 +116,7 @@ Create Assignments via modal
 
 Profile
 
-##### 🛠 Admin Dashboard
+### 🛠 Admin Dashboard
 Teacher Requests
 
 Approve/Reject with status update
@@ -135,7 +135,7 @@ View progress (assignments & submissions)
 
 Profile
 
-##### 🧩 Tech Stack
+### 🧩 Tech Stack
 Frontend: React, React Router, Tailwind CSS, TanStack Query, Axios, React Hook Form, Firebase
 
 Backend: Express.js, MongoDB, Stripe, JWT
