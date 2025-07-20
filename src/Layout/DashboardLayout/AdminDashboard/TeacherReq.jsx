@@ -10,7 +10,7 @@ const TeacherReq = () => {
   const { data: requests = [], isLoading } = useQuery({
     queryKey: ['allTeacherRequests'],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/admin/teacher-requests');
+      const res = await axios.get('https://a12-server-gamma.vercel.app/admin/teacher-requests');
       return res.data;
     },
   });
@@ -18,7 +18,7 @@ const TeacherReq = () => {
 
   const approveMutation = useMutation({
     mutationFn: (email) =>
-      axios.patch(`http://localhost:5000/teacher-requests/approve/${email}`),
+      axios.patch(`https://a12-server-gamma.vercel.app/teacher-requests/approve/${email}`),
     onSuccess: () => {
       toast.success('Request approved!');
       queryClient.invalidateQueries(['allTeacherRequests']);
@@ -28,7 +28,7 @@ const TeacherReq = () => {
 
   const rejectMutation = useMutation({
     mutationFn: (email) =>
-      axios.patch(`http://localhost:5000/teacher-requests/reject/${email}`),
+      axios.patch(`https://a12-server-gamma.vercel.app/teacher-requests/reject/${email}`),
     onSuccess: () => {
       toast.info('Request rejected.');
       queryClient.invalidateQueries(['allTeacherRequests']);

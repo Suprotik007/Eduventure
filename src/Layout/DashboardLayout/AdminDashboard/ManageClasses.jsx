@@ -9,13 +9,13 @@ const ManageClasses = () => {
   const { data: classes = [], isLoading } = useQuery({
     queryKey: ['allClasses'],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/classes');
+      const res = await axios.get('https://a12-server-gamma.vercel.app/classes');
       return res.data;
     },
   });
 
   const approveMutation = useMutation({
-    mutationFn: (id) => axios.patch(`http://localhost:5000/classes/${id}/approve`),
+    mutationFn: (id) => axios.patch(`https://a12-server-gamma.vercel.app/classes/${id}/approve`),
     onSuccess: () => {
       toast.success('Class approved');
       queryClient.invalidateQueries(['allClasses']);
@@ -23,7 +23,7 @@ const ManageClasses = () => {
   });
 
   const rejectMutation = useMutation({
-    mutationFn: (id) => axios.patch(`http://localhost:5000/classes/${id}/reject`),
+    mutationFn: (id) => axios.patch(`https://a12-server-gamma.vercel.app/${id}/reject`),
     onSuccess: () => {
       toast.success('Class rejected');
       queryClient.invalidateQueries(['allClasses']);

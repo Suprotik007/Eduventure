@@ -29,7 +29,7 @@ const AddClass = () => {
     };
 
     try {
-      await axios.post(`http://localhost:5000/classes`, newClass);
+      await axios.post(`https://a12-server-gamma.vercel.app/classes`, newClass);
     
       reset();
       navigate('/dashboard/my-class'); 

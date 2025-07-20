@@ -9,7 +9,7 @@ const AssignmentModal = ({ isOpen, onClose, classId, onSuccess }) => {
   const onSubmit = async (data) => {
     data.classId = classId;
     try {
-      await axios.post('http://localhost:5000/progress/assignments', data);
+      await axios.post('https://a12-server-gamma.vercel.app/progress/assignments', data);
       toast.success("Assignment created!");
       reset();
       onSuccess(); 

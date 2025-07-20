@@ -16,7 +16,7 @@ const MyClass = () => {
   const { data: classes = [] } = useQuery({
     queryKey: ['myClasses', user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/classes/teacher?email=${user?.email}`);
+      const res = await axios.get(`https://a12-server-gamma.vercel.app/classes/teacher?email=${user?.email}`);
       return res.data;
     },
     enabled: !!user?.email,
@@ -24,7 +24,7 @@ const MyClass = () => {
 
   const deleteMutation = useMutation({
     mutationFn: async (id) => {
-      await axios.delete(`http://localhost:5000/classes/${id}`);
+      await axios.delete(`https://a12-server-gamma.vercel.app/classes/${id}`);
     },
     onSuccess: () => {
       toast.success('Class deleted!');
@@ -51,7 +51,7 @@ const MyClass = () => {
 
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }) => {
-      return await axios.patch(`http://localhost:5000/classes/${id}`, data);
+      return await axios.patch(`https://a12-server-gamma.vercel.app/classes/${id}`, data);
       
       
     },

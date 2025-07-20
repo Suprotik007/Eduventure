@@ -23,7 +23,7 @@ const Google = () => {
 };
 
 
-    const res = await fetch("http://localhost:5000/users", {
+    const res = await fetch("https://a12-server-gamma.vercel.app/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userInfo),

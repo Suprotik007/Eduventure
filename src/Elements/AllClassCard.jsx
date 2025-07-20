@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 
 const fetchClasses = async () => {
-  const res = await axios.get('http://localhost:5000/allClasses');
+  const res = await axios.get('https://a12-server-gamma.vercel.app/allClasses');
   return res.data;
 };
 

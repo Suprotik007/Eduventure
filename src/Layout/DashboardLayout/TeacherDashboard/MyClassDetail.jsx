@@ -13,13 +13,13 @@ const MyClassDetail = () => {
 
   const fetchClassData = async () => {
     try {
-      const classRes = await axios.get(`http://localhost:5000/classes/${id}`);
+      const classRes = await axios.get(`https://a12-server-gamma.vercel.app/classes/${id}`);
       setClassInfo(classRes.data);
 
-      const assignmentRes = await axios.get(`http://localhost:5000/progress/assignments/count?classId=${id}`);
+      const assignmentRes = await axios.get(`https://a12-server-gamma.vercel.app/progress/assignments/count?classId=${id}`);
       setAssignmentCount(assignmentRes.data.count);
 
-      const submissionRes = await axios.get(`http://localhost:5000/progress/submissions/count?classId=${id}`);
+      const submissionRes = await axios.get(`https://a12-server-gamma.vercel.app/progress/submissions/count?classId=${id}`);
       setSubmissionCount(submissionRes.data.count);
     } catch (error) {
       console.error('Error fetching class data:', error);

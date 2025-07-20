@@ -9,7 +9,7 @@ const ClassDtlCard = () => {
   useEffect(() => {
     const fetchClassDetails = async () => {
     
-        const response = await fetch(`http://localhost:5000/classes/${_id}`);
+        const response = await fetch(`https://a12-server-gamma.vercel.app/classes/${_id}`);
         const data = await response.json();
         setClassDetail(data);
     

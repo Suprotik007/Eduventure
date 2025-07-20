@@ -57,7 +57,7 @@ const BecomeTutor = () => {
 
   const handleResubmit = async () => {
     try {
-    await axios.patch(`http://localhost:5000/teacher-requests/resubmit/${user.email}`, { status: 'pending' });
+    await axios.patch(`https://a12-server-gamma.vercel.app//teacher-requests/resubmit/${user.email}`, { status: 'pending' });
 
       toast.success('Resubmitted for review!');
       refetch();

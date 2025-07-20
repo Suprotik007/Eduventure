@@ -14,7 +14,7 @@ const MyEnrolledClass = () => {
 
     const fetchEnrolled = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/enrollments?email=${user.email}`);
+        const res = await axios.get(`https://a12-server-gamma.vercel.app/enrollments?email=${user.email}`);
         setEnrolledClasses(res.data);
       } catch (error) {
         console.error('Failed to fetch enrolled classes:', error);

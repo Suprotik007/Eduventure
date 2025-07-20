@@ -10,14 +10,14 @@ const ManageUsers = () => {
   const { data: users = [], refetch, isLoading } = useQuery({
     queryKey: ['users', search],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/users?search=${search}`);
+      const res = await axios.get(`https://a12-server-gamma.vercel.app/users?search=${search}`);
       return res.data;
     }
   });
 
   const mutation = useMutation({
     mutationFn: async (email) => {
-      return await axios.patch(`http://localhost:5000/users/make-admin/${email}`);
+      return await axios.patch(`https://a12-server-gamma.vercel.app/users/make-admin/${email}`);
     },
     onSuccess: () => {
       toast.success('User promoted to admin!');
