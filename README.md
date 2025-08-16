@@ -4,7 +4,7 @@ Welcome to Edventure — a full-stack e-learning platform where students can exp
 ### 🔐 Admin Access
 email: bob@gmail.com
 
-Password: bob123@
+Password: Bob123@
 
 
 ### 🌐 Live Website
