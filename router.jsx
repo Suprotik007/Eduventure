@@ -18,6 +18,7 @@ import ManageUsers from "./src/Layout/DashboardLayout/AdminDashboard/ManageUsers
 import ManageClasses from "./src/Layout/DashboardLayout/AdminDashboard/ManageClasses";
 import Profile from "./src/Layout/DashboardLayout/UserProfile/Profile";
 import BecomeTutor from "./src/Pages/BecomeTutor";
+import Error from "./src/Pages/Error";
 
 
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         path: '/',
         
         element: <RootLayout></RootLayout>,
+        errorElement: <Error></Error>,
         children:[{
             index:true,
         Component : Home
