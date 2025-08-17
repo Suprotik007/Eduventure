@@ -8,8 +8,9 @@ Password: bob123@
 
 
 ### 🌐 Live Website
-https://edventure-learning.vercel.app
+https://eduventure-ox.netlify.app/
 
+ 
 ### 🌟 Key Features
 #### Role-Based Dashboard: 
 Separate dashboards for Students, Teachers, and Admins with protected routes using JWT.
