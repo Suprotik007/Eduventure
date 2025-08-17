@@ -7,7 +7,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 
 
-import partners from "../../public/partners.json";
+import partners from "../../src/assets/partners.json";
 
 function PartnerCard({ logo, name, description }) {
   return (
@@ -21,7 +21,7 @@ function PartnerCard({ logo, name, description }) {
 
 export default function PartnersSlider() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10 ">
+    <section className="max-w-7xl mx-auto pxj-4 py-10 ">
      
 
       <Swiper
