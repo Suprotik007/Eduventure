@@ -5,7 +5,7 @@ import BooksSlider from '../Elements/BookSlider';
 const BooksSection = () => {
     const [books,setBooks]=useState([])
     useEffect(()=>{
-        fetch('/src/assets/books.json')
+        fetch('/books.json')
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[])

@@ -7,7 +7,7 @@ const Events = () => {
 
     const [events,setEvents]=useState([])
         useEffect(()=>{
-            fetch('/src/assets/events.json')
+            fetch('/events.json')
             .then(res=>res.json())
             .then(data=>setEvents(data))
         },[])

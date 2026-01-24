@@ -7,6 +7,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 
 
+
 import partners from "../../src/assets/partners.json";
 
 function PartnerCard({ logo, name, description }) {
