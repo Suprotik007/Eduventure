@@ -5,7 +5,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user,role, logOut } = useContext(AuthContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
@@ -44,7 +44,7 @@ const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/allClass", label: "Classes" },
     { to: "/becomeTutor", label: "Teach" },
-    // ...(user ? [{ to: "/dashboard/profile", label: "Dashboard" }] : [])
+    
   ];
 
   return (
@@ -122,7 +122,7 @@ const Navbar = () => {
                       <p className={`text-sm font-semibold ${scrolled ? 'text-gray-800' : 'text-white'}`}>
                         {user.displayName?.split(' ')[0]}
                       </p>
-                      <p className="text-xs text-gray-500">Student</p>
+                      <p className="text-xs text-gray-500">{role}</p>
                     </div>
                     <svg 
                       className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''} ${
