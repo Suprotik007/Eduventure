@@ -44,7 +44,7 @@ const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/allClass", label: "Classes" },
     { to: "/becomeTutor", label: "Teach" },
-    ...(user ? [{ to: "/dashboard/profile", label: "Dashboard" }] : [])
+    // ...(user ? [{ to: "/dashboard/profile", label: "Dashboard" }] : [])
   ];
 
   return (

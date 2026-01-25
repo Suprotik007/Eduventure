@@ -94,23 +94,9 @@ const BooksSection = () => {
                     )}
                 </div>
 
-                {/* Call to Action */}
-                <div className="text-center">
-                    <div className="inline-block p-1 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-2xl animate-float">
-                        <div className="bg-white rounded-xl px-8 py-6">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">Want More Recommendations?</h3>
-                            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                                Join our book club and get weekly reading suggestions from top educators
-                            </p>
-                            <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl">
-                                Join Book Club
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     );
 };
 
-export default BooksSection;
+export default BooksSection; 
