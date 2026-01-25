@@ -118,23 +118,10 @@ const Dashboard = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 ">
           <div className="max-w-7xl mx-auto">
-            {/* Dashboard Header */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h1 className="text-3xl font-bold text-gray-900 capitalize">Welcome, {role}</h1>
-                  <p className="text-gray-600 mt-1">Manage your activities and progress</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg">
-                    <span className="text-sm font-medium text-blue-700">Last login: Today</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          
+           
             {/* Content Area */}
             <div className="card-modern">
               <Outlet />
