@@ -10,9 +10,9 @@ import Feedbacks from '../Components/Feedbacks';
 
 const Home = () => {
     return (
-        <div className="space-y-32">
+        <div className="">
             {/* Hero Section */}
-            <section className="pt-24">
+            <section className="">
                 <Banner />
             </section>
 

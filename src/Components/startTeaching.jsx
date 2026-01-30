@@ -24,25 +24,7 @@ const StartTeaching = () => {
                 Join our vibrant community of educators and make a real difference in students' lives. Teach what you love, inspire learners worldwide, and grow your impact—all from one powerful platform.
               </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                  <div className="text-2xl font-bold text-gray-900">10K+</div>
-                  <div className="text-sm text-gray-600">Students</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                  <div className="text-2xl font-bold text-gray-900">$5K+</div>
-                  <div className="text-sm text-gray-600">Avg Earnings</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                  <div className="text-2xl font-bold text-gray-900">4.9★</div>
-                  <div className="text-sm text-gray-600">Rating</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-                  <div className="text-2xl font-bold text-gray-900">24/7</div>
-                  <div className="text-sm text-gray-600">Support</div>
-                </div>
-              </div>
+             
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
@@ -51,16 +33,19 @@ const StartTeaching = () => {
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
-                    Start Teaching Free
+                    Start Teaching 
                   </button>
                 </Link>
+
+               <Link to="/allClass">
                 <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center w-full sm:w-auto">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Watch Demo
+                  View Classes
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -103,7 +88,7 @@ const StartTeaching = () => {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-gray-900">500+</div>
-                    <div className="text-sm text-gray-600">Active Instructors</div>
+                    <div className="text-sm text-gray-600">Active Community</div>
                   </div>
                 </div>
               </div>

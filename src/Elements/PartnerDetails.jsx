@@ -14,7 +14,7 @@ function PartnerCard({ logo, name, description }) {
   return (
     <div className=" bg-gray-100 border-1 rounded-lg shadow-lg p-5 flex flex-col items-center text-center">
       <img src={logo} alt={name} className="h-16 w-auto mb-4" />
-      {/* <h3 className="text-lg font-semibold">{name}</h3> */}
+      <h3 className="text-lg font-semibold">{name}</h3>
       <p className=" font-medium mt-2 text-sm">{description}</p>
     </div>
   );

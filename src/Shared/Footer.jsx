@@ -9,34 +9,38 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white mt-20">
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-gradient-to-b from-slate-900 to-gray-900 text-white mt-20">
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-8 lg:space-y-0">
+          
           {/* Brand Section */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:max-w-md">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">EV</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">EV</span>
               </div>
               <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   EduVenture
                 </h2>
-                <p className="text-sm text-gray-400 mt-1">Future of Learning</p>
+                <p className="text-sm text-gray-400 mt-1">Learn • Grow • Succeed</p>
               </div>
             </div>
-            <p className="text-gray-400 leading-relaxed">
-              Empowering learners worldwide with cutting-edge education technology and expert-led courses.
+            <p className="text-gray-300 leading-relaxed">
+              Empowering learners with modern education technology and expert-led courses.
             </p>
-            <div className="flex space-x-4">
+            
+            {/* Social Links */}
+            <div className="flex space-x-3 pt-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
+                  aria-label={`Follow us on ${social.name}`}
                 >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-gray-300 hover:text-white" viewBox="0 0 24 24">
                     <path d={social.icon} fill="currentColor" />
                   </svg>
                 </a>
@@ -44,75 +48,63 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Home', 'Classes', 'Become Tutor', 'Dashboard', 'About Us', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                    {item}
+          {/* Quick Links - Simplified */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Navigate</h3>
+              <ul className="space-y-2">
+                {['Home', 'Classes', 'Teach', 'Dashboard'].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Legal</h3>
+              <ul className="space-y-2">
+                {['Privacy', 'Terms', 'Cookies'].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Contact</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="mailto:hello@eduenture.com" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                    hello@eduenture.com
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Categories</h3>
-            <ul className="space-y-3">
-              {['Web Development', 'Data Science', 'UI/UX Design', 'Digital Marketing', 'Business', 'Creative Arts'].map((category) => (
-                <li key={category}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                    {category}
-                  </a>
+                <li>
+                  <span className="text-gray-400 text-sm">Dhaka, Bangladesh</span>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Stay Updated</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest courses and updates.</p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:opacity-90 transition-all duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="border-t border-gray-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} EduVenture. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-                Cookie Policy
-              </a>
+              </ul>
             </div>
           </div>
         </div>
+
+       
+        <div className="mt-12 pt-8  border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-center text-sm">
+              © {new Date().getFullYear()} EduVenture. All rights reserved.
+            </p>
+  
+          </div>
+        </div>
+
+        {/* Floating decorative elements */}
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full translate-x-1/3 translate-y-1/2 blur-3xl"></div>
       </div>
     </footer>
   );

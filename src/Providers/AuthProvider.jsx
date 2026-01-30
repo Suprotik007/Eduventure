@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
 
           const token = jwtResponse.data.token;
           localStorage.setItem('access-token', token);
-// console.log(localStorage.getItem('access-token'));
+
 
           const res = await axios.get(
             `${import.meta.env.VITE_API_URL}/users/${encodeURIComponent(currentUser.email)}`

@@ -61,7 +61,7 @@ const Feedbacks = () => {
   }
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <section className="py-10 px-4 bg-gradient-to-br from-green-50 via-white to-blue-100">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -69,7 +69,7 @@ const Feedbacks = () => {
             <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-yellow-700">Testimonials</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-pink-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-2xl md:text-4xl sm:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-pink-600 bg-clip-text text-transparent mb-6">
             What Our Students Say
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -121,17 +121,17 @@ const Feedbacks = () => {
           >
             {feedbacks.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="h-full">
+                <div className="h-full border border-gray-300 bg-gradient-to-tl from-violet-100 via-orange-50 to-green-100 rounded-2xl bg-white shadow-sm relative overflow-hidden">
                   <div className="card-modern p-8 h-full hover:shadow-2xl transition-all duration-500">
                     {/* Quote Icon */}
                     <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-100" fill="currentColor" viewBox="0 0 32 32">
+                      <svg className="w-12 h-12 text-gray-500" fill="currentColor" viewBox="0 0 32 32">
                         <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4z"/>
                       </svg>
                     </div>
 
                     {/* Feedback Text */}
-                    <p className="text-gray-700 text-lg italic mb-8 leading-relaxed">
+                    <p className="text-gray-800 text-lg italic mb-8 leading-relaxed">
                       "{item.feedback}"
                     </p>
 
@@ -169,10 +169,10 @@ const Feedbacks = () => {
                     {/* Course Info */}
                     <div className="mt-6 pt-6 border-t border-gray-100">
                       <div className="flex items-center space-x-2">
-                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-  text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
-                        <span className="text-sm font-medium text-gray-900 truncate">
+                        <span className="text-sm font-semibold border-2 rounded-2xl px-2 bg-gray-600  text-purple-300 truncate">
                           {item.classTitle || 'Unknown Course'}
                         </span>
                       </div>

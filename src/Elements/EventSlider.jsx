@@ -95,7 +95,7 @@ const EventSlider = ({ event }) => {
         {event.map((eventItem, index) => (
           <SwiperSlide key={index}>
             <div className="px-2 py-4">
-              <EventCard event={eventItem} />
+              <EventCard event={eventItem} index={index} />
             </div>
           </SwiperSlide>
         ))}

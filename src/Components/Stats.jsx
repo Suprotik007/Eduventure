@@ -10,7 +10,7 @@ const Stats = () => {
     },
   });
 
-  const { users = 0, classes = 0, totalEnrollments = 0, instructors = 0 } = data;
+  const { users = 0, classes = 0, totalEnrollments = 0, instructors = 5 } = data;
 
   const stats = [
     {
@@ -83,10 +83,10 @@ const Stats = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-2xl md:text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
             Our Impact in Numbers
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of learners transforming their skills with EduVenture
           </p>
         </div>
@@ -138,16 +138,7 @@ const Stats = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-20 text-center">
-          <div className="inline-block p-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl animate-float">
-            <div className="bg-white rounded-xl px-8 py-4">
-              <p className="text-lg font-semibold text-gray-900">
-                Start your learning journey today
-              </p>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
