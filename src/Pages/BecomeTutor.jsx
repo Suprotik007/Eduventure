@@ -213,7 +213,7 @@ const BecomeTutor = () => {
 
           {/* Right Form Panel */}
           <div className="lg:col-span-2">
-            <div className="card-modern p-8">
+            <div className="card-modern border-2 border-gray-300 rounded-2xl p-8 shadow-lg animate-fade-in-up">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

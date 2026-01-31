@@ -28,7 +28,7 @@ const PaymentCard = () => {
 
   if (isPending) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen border-2 border-gray-300 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
@@ -137,8 +137,8 @@ const PaymentCard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br  from-blue-50 via-white to-purple-50 py-12 px-4">
+      <div className="max-w-4xl mx-auto border-2 border-gray-300 bg-white rounded-2xl shadow-lg p-8">
         {/* Progress Steps */}
         <div className="flex items-center justify-center mb-12">
           <div className="flex items-center">
@@ -183,7 +183,7 @@ const PaymentCard = () => {
               <div className="mb-8">
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Select Payment Method</h3>
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {['card', 'paypal', 'google', 'apple'].map((method) => (
+                  {['card',  'Bkash'].map((method) => (
                     <button
                       key={method}
                       onClick={() => setPaymentMethod(method)}
