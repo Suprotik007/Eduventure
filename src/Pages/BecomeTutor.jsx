@@ -4,6 +4,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Providers/AuthProvider';
+import { Link } from 'react-router';
 
 const BecomeTutor = () => {
   const { user } = useContext(AuthContext);
@@ -91,13 +92,18 @@ const BecomeTutor = () => {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-3">Welcome, Instructor!</h2>
             <p className="text-gray-600 mb-6">You are already an approved instructor. Start creating amazing courses!</p>
-            <div className="space-y-3">
+            <div className="gap-4 grid grid-cols-1 sm:grid-cols-2">
+             <Link to="/dashboard">
               <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium hover:opacity-90 transition-all duration-300">
                 Go to Dashboard
               </button>
+              </Link>
+
+              <Link to='/dashboard/my-class'>
               <button className="w-full py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all duration-300">
                 View My Classes
               </button>
+              </Link>
             </div>
           </div>
         </div>

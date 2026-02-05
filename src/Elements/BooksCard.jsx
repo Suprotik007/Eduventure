@@ -40,13 +40,38 @@ const BooksCard = ({ book, index }) => {
   const borderGradient = borderGradients[gradientIndex];
   const buttonGradient = buttonGradients[gradientIndex];
 
+  // Function to handle PDF download
+  const handleDownload = () => {
+    if (!book.pdfURL) {
+      alert(`No PDF available for "${book.bookName}"`);
+      return;
+    }
+    
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = book.pdfURL;
+    link.target = '_blank';
+    
+    // Extract filename from URL or use book name
+    const filename = book.pdfURL.split('/').pop() || 
+                    `${book.bookName.toLowerCase().replace(/[^a-z0-9]/g, '-')}.pdf`;
+    
+    link.download = filename;
+    link.rel = 'noopener noreferrer';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="relative group">
       {/* Gradient Border */}
-      <div className={`absolute inset-0  bg-gradient-to-r ${borderGradient} rounded-2xl blur opacity-50 group-hover:opacity-80 transition-all duration-700 -z-10`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-r ${borderGradient} rounded-2xl blur opacity-50 group-hover:opacity-80 transition-all duration-700 -z-10`}></div>
       
       {/* Main Card */}
-      <div className={`relative   bg-gradient-to-br ${cardGradient} rounded-2xl border border-gray-400 backdrop-blur-sm shadow-lg overflow-hidden group-hover:shadow-2xl transition-all duration-500 hover:-translate-y-3`}>
+      <div className={`relative bg-gradient-to-br ${cardGradient} rounded-2xl border border-gray-400 backdrop-blur-sm shadow-lg overflow-hidden group-hover:shadow-2xl transition-all duration-500 hover:-translate-y-3`}>
         {/* Decorative Corner Elements */}
         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-white/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
         <div className="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-tr from-white/20 to-transparent rounded-full translate-y-1/2 -translate-x-1/2 opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
@@ -113,7 +138,7 @@ const BooksCard = ({ book, index }) => {
             
             {/* Pages Count */}
             <div className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-violet-50 backdrop-blur-sm border border-gray-100 shadow-sm">
-              <div className=" rounded-md bg-blue-50 flex items-center justify-center">
+              <div className="rounded-md bg-blue-50 flex items-center justify-center">
                 <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
@@ -162,16 +187,19 @@ const BooksCard = ({ book, index }) => {
           {/* Download Button */}
           <div className="relative">
             <div className={`absolute inset-0 bg-gradient-to-r ${buttonGradient} rounded-xl blur opacity-60 group-hover:opacity-80 transition-opacity duration-300`}></div>
-            <button className={`relative w-full px-6 py-3 bg-gradient-to-r ${buttonGradient} text-green-500 border bg-emerald-50/30  rounded-full text-sm font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-2 group/btn`}>
+            <button 
+              onClick={handleDownload}
+              className={`relative w-full px-6 py-3 bg-gradient-to-r ${buttonGradient} text-green-500 border bg-emerald-50/30 rounded-full text-sm font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-2 group/btn`}
+              title={`Download ${book.bookName} PDF`}
+            >
               <svg className="w-4 h-4 transform group-hover/btn:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
               <span className='text-green-500'>Download PDF</span>
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-ping opacity-75"></div>
             </button>
+            
           </div>
-          
-         
         </div>
       </div>
     </div>

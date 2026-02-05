@@ -215,8 +215,8 @@ const Navbar = () => {
               ) : (
                 <div className="flex items-center space-x-3">
                   <Link to="/login">
-                    <button className="hidden lg:block px-8 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                      🚀 Sign In
+                    <button className="hidden lg:block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                       Sign In
                     </button>
                     <button className="lg:hidden px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl font-bold shadow">
                       Sign In

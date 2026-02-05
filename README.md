@@ -6,6 +6,11 @@ email: bob@gmail.com
 
 Password: Bob123@
 
+### 🔐 Teacher Access
+email: leo@gmail.com
+
+Password: Leo123@
+
 
 ### 🌐 Live Website
 https://eduventure-ox.netlify.app/

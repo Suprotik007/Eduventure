@@ -61,7 +61,7 @@ const AddClass = () => {
   const levels = ['Beginner', 'Intermediate', 'Advanced'];
 
   return (
-    <div className="min-h-[calc(100vh-200px)] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 py-8 px-4">
+    <div className="min-h-[calc(100vh-200px)] bg-gradient-to-br from-gray-50 via-white to-purple-50/30 py-8  px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -76,7 +76,7 @@ const AddClass = () => {
         </div>
 
         {/* Form */}
-        <div className="card-modern p-8">
+        <div className="card-modern p-8 border border-gray-200 bg-white shadow-lg rounded-2xl">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Teacher Info */}
             <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl mb-6">

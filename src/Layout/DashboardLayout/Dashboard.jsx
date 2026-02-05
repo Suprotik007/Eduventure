@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from 'react-router';
 import useAuth from '../../Providers/useAuth';
+import logo from '../../assets/E-removebg-preview.png';
 
 const Dashboard = () => {
   const { role, loading, user } = useAuth();  
@@ -12,14 +13,7 @@ const Dashboard = () => {
     );
   }
 
-  const getRoleIcon = (roleName) => {
-    switch(roleName) {
-      case 'student': return '📚';
-      case 'teacher': return '👨‍🏫';
-      case 'admin': return '⚙️';
-      default: return '👤';
-    }
-  };
+  
 
   const getRoleColor = (roleName) => {
     switch(roleName) {
@@ -38,21 +32,21 @@ const Dashboard = () => {
     }`;
 
   const studentLinks = [
-    { to: "/dashboard/my-enroll-class", label: "Enrolled Classes", icon: "📘" },
-    { to: "/dashboard/profile", label: "Profile", icon: "👤" },
+    { to: "/dashboard/my-enroll-class", label: "Enrolled Classes" },
+    { to: "/dashboard/profile", label: "Profile" },
   ];
 
   const teacherLinks = [
-    { to: "/dashboard/add-class", label: "Add Class", icon: "➕" },
-    { to: "/dashboard/my-class", label: "My Classes", icon: "📚" },
-    { to: "/dashboard/profile", label: "Profile", icon: "👤" },
+    { to: "/dashboard/my-class", label: "My Classes" },
+    { to: "/dashboard/profile", label: "Profile"},
+    { to: "/dashboard/add-class", label: "Add Class" },
   ];
 
   const adminLinks = [
-    { to: "/dashboard/teacher-request", label: "Teacher Requests", icon: "👩‍🏫" },
-    { to: "/dashboard/users", label: "Manage Users", icon: "👥" },
-    { to: "/dashboard/all-classes", label: "Class Requests", icon: "📋" },
-    { to: "/dashboard/profile", label: "Profile", icon: "👤" },
+    { to: "/dashboard/teacher-request", label: "Teacher Requests" },
+    { to: "/dashboard/users", label: "Manage Users" },
+    { to: "/dashboard/all-classes", label: "Class Requests" },
+    { to: "/dashboard/profile", label: "Profile" },
   ];
 
   const links = role === 'student' ? studentLinks : role === 'teacher' ? teacherLinks : adminLinks;
@@ -65,8 +59,8 @@ const Dashboard = () => {
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center space-x-3 mb-6">
-              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${getRoleColor(role)} flex items-center justify-center`}>
-                <span className="text-xl text-white">{getRoleIcon(role)}</span>
+              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r  flex items-center justify-center`}>
+              <img src={logo} alt="" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-gray-900">EduVenture</h2>

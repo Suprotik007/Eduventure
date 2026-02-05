@@ -7,6 +7,7 @@
     "categories": "Education",
     "pages": 280,
     "author": "Jane Smith",
+    "pdfURL" : "https://course.ccs.neu.edu/cs5500sp17/09-UX.pdf",
     "description" : "This book introduces the core principles of user interface and user experience design, focusing on usability, user-centered thinking, and design processes. It’s ideal for beginners seeking to understand how to create intuitive, aesthetically pleasing, and functional digital products."
 
   },
@@ -17,6 +18,7 @@
     "categories":  "Finance",
     "pages": 300,
     "author": "Josh Kaufman",
+    "pdfURL": "https://public.summaries.com/files/1-page-summary/the-personal-mba.pdf",
     "description" : "This book offers a crash course in essential business concepts—like marketing, sales, productivity, and systems thinking—without the high cost of a traditional MBA. It’s designed to help professionals and entrepreneurs master business fundamentals through practical insights and real-world examples."
   },
   {
@@ -26,6 +28,7 @@
     "categories": "Psychology", 
     "pages": 320,
     "author": "Carol S. Dweck",
+    "pdfURL":"https://static1.squarespace.com/static/5df3bc9a62ff3e45ae9d2b06/t/5e88b620d7a6d83f2fe39765/1586017925197/EBS+Mindset-+The+New+Psychology+of+Success.pdf",
     "description" : "Psychologist Carol Dweck explores how our mindset—either fixed or growth—can significantly influence success in work, school, and personal life. She explains how adopting a growth mindset can foster resilience, learning, and achievement across all areas."
   },
   {
@@ -35,6 +38,7 @@
   "categories": "Self-Help",
   "pages": 320,
   "author": "James Clear",
+  "pdfURL":"https://sistem42.com/wp-content/uploads/2022/08/Atomic-Habits-James-Clear.pdf",
   "description": "James Clear explains how tiny changes can lead to remarkable results by building good habits and breaking bad ones."
 },
 {
@@ -44,6 +48,7 @@
   "categories": "History",
   "pages": 498,
   "author": "Yuval Noah Harari",
+  "pdfURL":"https://cpcglobal.org/publications/Sapiens%20A%20Brief%20History%20of%20Humankind.pdf",
   "description": "A compelling narrative exploring the history and impact of Homo sapiens on the world, from the Stone Age to the 21st century."
 },
 {
@@ -53,6 +58,7 @@
   "categories": "Productivity",
   "pages": 304,
   "author": "Cal Newport",
+  "pdfURL":"https://cdn.bookey.app/files/pdf/book/en/deep-work.pdf",
   "description": "Cal Newport argues the importance of focused, distraction-free work to master complicated information and produce better results."
 }
 

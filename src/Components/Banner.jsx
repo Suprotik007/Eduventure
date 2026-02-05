@@ -44,19 +44,19 @@ const Banner = () => {
   ];
 
   return (
-    <div className="relative w-11/12 mx-auto pt-24 pb-12">
+    <div className="relative w-11/12 mx-auto pt-20 md:pt-24 pb-8 md:pb-12">
       {/* Custom Styles */}
       <style>{`
         .banner-slider .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
+          width: 10px;
+          height: 10px;
           background: white;
           opacity: 0.5;
         }
         .banner-slider .swiper-pagination-bullet-active {
           opacity: 1;
-          width: 32px;
-          border-radius: 8px;
+          width: 24px;
+          border-radius: 6px;
           background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
         }
         .banner-slider .swiper-button-next,
@@ -64,14 +64,14 @@ const Banner = () => {
           color: white;
           background: rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(10px);
-          width: 56px;
-          height: 56px;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
           transition: all 0.3s ease;
         }
         .banner-slider .swiper-button-next:after,
         .banner-slider .swiper-button-prev:after {
-          font-size: 24px;
+          font-size: 20px;
           font-weight: bold;
         }
         .banner-slider .swiper-button-next:hover,
@@ -83,6 +83,13 @@ const Banner = () => {
           .banner-slider .swiper-button-next,
           .banner-slider .swiper-button-prev {
             display: none;
+          }
+          .banner-slider .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+          }
+          .banner-slider .swiper-pagination-bullet-active {
+            width: 20px;
           }
         }
       `}</style>
@@ -102,12 +109,12 @@ const Banner = () => {
         navigation={true}
         loop={true}
         speed={1000}
-        className="banner-slider rounded-3xl shadow-2xl"
+        className="banner-slider rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative">
-            {/* Background Image */}
-            <div className="relative h-[85vh] min-h-[600px]">
+            {/* Responsive Height Container */}
+            <div className="relative h-[60vh] min-h-[500px] sm:h-[55vh] sm:min-h-[450px] md:h-[75vh] lg:h-[85vh] md:min-h-[550px] lg:min-h-[600px]">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -115,87 +122,104 @@ const Banner = () => {
               />
               <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`}></div>
               
-              {/* Content */}
+              {/* Content Container */}
               <div className="relative h-full flex items-center">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12 md:py-0">
                   <div className="max-w-4xl">
-                    {/* Badge */}
-                    <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-8 animate-fade-in-up">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      <span className="text-white text-sm font-medium">New Courses Available</span>
+                    {/* Badge - Hidden on smallest screens */}
+                    <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse"></div>
+                      <span className="text-white text-xs sm:text-sm font-medium">New Courses Available</span>
                     </div>
                     
-                    {/* Title */}
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-slide-in-left">
+                    {/* Title - Responsive font sizes */}
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-slide-in-left">
                       <span className={`bg-gradient-to-r ${slide.textGradient} bg-clip-text text-transparent`}>
                         {slide.title}
                       </span>
                     </h1>
                     
-                    {/* Subtitle */}
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-semibold mb-6 animate-slide-in-right">
+                    {/* Subtitle - Responsive font sizes */}
+                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-semibold mb-4 sm:mb-6 animate-slide-in-right">
                       {slide.subtitle}
                     </h2>
                     
-                    {/* Description */}
-                    <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl leading-relaxed animate-fade-in-up">
+                    {/* Description - Hidden on small screens, shown on medium+ */}
+                    <p className="hidden sm:block text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl leading-relaxed animate-fade-in-up">
                       {slide.description}
                     </p>
                     
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
+                    {/* CTA Buttons - Stack on small screens */}
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up">
                       <Link to="/allClass">
-                        <button className={`px-8 py-4 bg-gradient-to-r ${slide.buttonColor} text-white rounded-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center`}>
-                          <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button className={`px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${slide.buttonColor} text-white rounded-xl font-semibold hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center sm:justify-start`}>
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                           </svg>
                           {slide.buttonText}
                         </button>
                       </Link>
                       <Link to="/becomeTutor">
-                        <button className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 border border-white/30 flex items-center">
-                          <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 border border-white/30 flex items-center justify-center sm:justify-start">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
                           </svg>
-                          Become an Instructor
+                          <span className="hidden sm:inline">Become an Instructor</span>
+                          <span className="sm:hidden">Teach</span>
                         </button>
                       </Link>
                     </div>
                     
-                    {/* Stats */}
-                    <div className="mt-12 flex flex-wrap gap-6 animate-fade-in-up">
+                    {/* Stats - Hidden on small screens, shown on medium+ */}
+                    <div className="hidden md:flex mt-8 lg:mt-12 flex-wrap gap-4 lg:gap-6 animate-fade-in-up">
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                          <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
                           </svg>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-white">50K+</div>
-                          <div className="text-white/80 text-sm">Active Learners</div>
+                          <div className="text-xl lg:text-2xl font-bold text-white">50K+</div>
+                          <div className="text-white/80 text-xs lg:text-sm">Active Learners</div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                          <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                           </svg>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-white">500+</div>
-                          <div className="text-white/80 text-sm">Expert Courses</div>
+                          <div className="text-xl lg:text-2xl font-bold text-white">500+</div>
+                          <div className="text-white/80 text-xs lg:text-sm">Expert Courses</div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                          <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                           </svg>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-white">98%</div>
-                          <div className="text-white/80 text-sm">Success Rate</div>
+                          <div className="text-xl lg:text-2xl font-bold text-white">98%</div>
+                          <div className="text-white/80 text-xs lg:text-sm">Success Rate</div>
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Mobile Stats - Simple version */}
+                    <div className="md:hidden mt-6 flex justify-center gap-4 animate-fade-in-up">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-white">50K+</div>
+                        <div className="text-white/80 text-xs">Learners</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-white">500+</div>
+                        <div className="text-white/80 text-xs">Courses</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-white">98%</div>
+                        <div className="text-white/80 text-xs">Success</div>
                       </div>
                     </div>
                   </div>
@@ -205,8 +229,6 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      
     </div>
   );
 };
